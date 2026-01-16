@@ -1,9 +1,9 @@
 <div align="center">
 
-  <h1>🤖 POLINEMA ROBOTICS TEAM</h1>
+  <h1>🤖 TIM ROBOTIKA POLINEMA</h1>
   
   <p>
-    <strong>Innovating Beyond Limits. Engineering the Future.</strong>
+    <strong>Berinovasi Tanpa Batas. Merancang Masa Depan.</strong>
   </p>
 
   <p>
@@ -31,101 +31,87 @@
 
 ---
 
-## ⚡ What's This Vibe?
+## ⚡ Apa Vibe-nya?
 
-Welcome to the **Digital HQ** of Polinema Robotics Team! This isn't just a landing page; it's a statement. Built with the bleeding edge of web tech, we're serving distinct **Cyber / Gen Z aesthetics** mixed with professional engineering credibility.
+Selamat datang di **Markas Digital** Tim Robotika Polinema! Ini bukan sekadar landing page biasa; ini adalah sebuah pernyataan. Dibangun dengan teknologi web terkini, kami menyajikan estetika khas **Cyber / Gen Z** yang dipadukan dengan kredibilitas teknik profesional.
 
-We dropped the boring corporate look for something that screams **Innovation**.
+Kami meninggalkan tampilan korporat yang membosankan demi sesuatu yang meneriakkan **Inovasi**.
 
-## 🚀 Tech Stack Check
+## 🚀 Cek Tech Stack
 
-We don't play with legacy code. Only the freshest tech here:
+Kita gak main-main sama kode jadul (legacy). Hanya teknologi paling segar di sini:
 
--   **⚛️ Framework**: [Next.js 16 (App Router)](https://nextjs.org/) - *Speed demon.*
--   **🔷 Language**: [TypeScript](https://www.typescriptlang.org/) - *Type safety is sexy.*
--   **🎨 Styling**: [Tailwind CSS v4](https://tailwindcss.com/) - *Utility-first, zero bloat.*
--   **✨ Animation**: [Framer Motion](https://www.framer.com/motion/) - *Smooth like butter.*
--   **🧩 Icons**: [Lucide React](https://lucide.dev/) - *Crisp & clean.*
--   **✍️ Fonts**: Inter + JetBrains Mono + **Gochi Hand** (for that sketchbook feel).
+-   **⚛️ Framework**: [Next.js 16 (App Router)](https://nextjs.org/) - *Ngebut parah.*
+-   **🔷 Bahasa**: [TypeScript](https://www.typescriptlang.org/) - *Type safety itu seksi.*
+-   **🎨 Styling**: [Tailwind CSS v4](https://tailwindcss.com/) - *Utility-first, tanpa bloat.*
+-   **✨ Animasi**: [Framer Motion](https://www.framer.com/motion/) - *Mulus kayak mentega.*
+-   **🧩 Ikon**: [Lucide React](https://lucide.dev/) - *Tajam & bersih.*
+-   **✍️ Font**: Inter + JetBrains Mono + **Gochi Hand** (buat nuansa corat-coret).
 
-## ✨ Epic Features
+## ✨ Fitur Epik
 
--   **Bento Grid Layouts**: Organizing chaos into beautiful blocks.
--   **Glassmorphism UI**: Frosted glass effects that feel premium.
--   **Scroll Animations**: Elements that glide in as you explore.
--   **Responsive Design**: Looks dope on your phone via mobile drawer.
--   **Touch & Glow**: Interactive hover states everywhere.
--   **Gallery Masonry**: A visual log of our robotic conquests.
+-   **Layout Bento Grid**: Mengatur kekacauan menjadi blok-blok indah.
+-   **UI Glassmorphism**: Efek kaca buram yang terasa premium.
+-   **Animasi Scroll**: Elemen yang meluncur masuk saat kamu menjelajah.
+-   **Desain Responsif**: Terlihat keren di HP kamu lewat mobile drawer.
+-   **Sentuh & Bersinar**: Efek hover interaktif di mana-mana.
+-   **Masonry Galeri**: Log visual dari penaklukan robotik kami.
 
-## 🛠️ Getting Started
+## 🛠️ Memulai
 
-Want to run this beast locally? Let's get it popping.
+Mau jalankan mesin buas ini di lokal? Ayo gaskeun.
 
-### 1. Clone the Repo
+### 1. Clone Repo
 ```bash
 git clone https://github.com/hafisc/polinema-robotics.git
 cd polinema-robotics/frontend
 ```
 
 ### 2. Install Dependencies
-Grab a coffee while the node modules download.
+Ambil kopi sambil nunggu node modules di-download.
 ```bash
 npm install
-# or
+# atau
 yarn install
-# or
+# atau
 pnpm install
 ```
 
-### 3. Ignite the Engine
-Start the development server.
+### 3. Nyalakan Mesin
+Jalankan development server.
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) and witness the greatness.
+Buka [http://localhost:3000](http://localhost:3000) dan saksikan kehebatannya.
 
-## 📂 Project Structure
+## 📂 Struktur Proyek
 
 ```bash
 src/
-├── app/              # Next.js App Router root
-│   ├── globals.css   # Global styles (Tailwind v4 configured)
-│   ├── layout.tsx    # Root layout with fonts & providers
-│   └── page.tsx      # Main entry point
-├── components/       # Reusable UI bits
-├── layouts/          # Layout wrappers (MainLayout, AuthLayout)
-├── lib/              # Utils & Data mocked (for now)
-└── pages/            # Page-specific components
-    ├── landing/      # Hero, Divisions, Gallery, etc.
+├── app/              # Root Next.js App Router
+│   ├── globals.css   # Style global (konfigurasi Tailwind v4)
+│   ├── layout.tsx    # Root layout dengan font & providers
+│   └── page.tsx      # Titik masuk utama
+├── components/       # Potongan UI yang bisa dipakai ulang
+├── layouts/          # Pembungkus layout (MainLayout, AuthLayout)
+├── lib/              # Utils & Mock Data (untuk saat ini)
+└── pages/            # Komponen spesifik halaman
+    ├── landing/      # Hero, Divisi, Galeri, dll.
     └── partials/     # Navbar, Footer
 ```
 
-## 🤝 Contributing
+## 🤝 Berkontribusi
 
-Got an idea to make this even cooler?
-1.  Fork it.
-2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4.  Push to the branch (`git push origin feature/AmazingFeature`).
-5.  Open a Pull Request.
-
-## 🌐 Connect With Us
-
-<div align="center">
-  <a href="https://instagram.com">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
-  </a>
-  <a href="https://linkedin.com">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="mailto:sekretariat@polinema.ac.id">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-</div>
+Punya ide buat bikin ini makin keren?
+1.  Fork repo ini.
+2.  Buat branch fitur kamu (`git checkout -b fitur/FiturKeren`).
+3.  Commit perubahan kamu (`git commit -m 'Menambahkan FiturKeren'`).
+4.  Push ke branch (`git push origin fitur/FiturKeren`).
+5.  Buka Pull Request.
 
 ---
 
 <p align="center">
-  Made with 💻 and ☕ by <strong>Polinema Robotics Team</strong>.
+  Dibuat dengan 💻 dan ☕ oleh <strong>Tim Robotika Polinema</strong>.
 </p>
