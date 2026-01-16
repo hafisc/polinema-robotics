@@ -43,7 +43,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
-                    Website Resmi <span className="text-white font-semibold">Tim Robotika Polinema</span>.
+                    Website Resmi <span className="text-white font-semibold">Polinema Robotics</span>.
                     Merancang masa depan melalui otonomi, presisi, dan rasa ingin tahu yang tak henti-hentinya.
                 </motion.p>
 

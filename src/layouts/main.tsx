@@ -2,12 +2,12 @@
 
 import Navbar from "@/pages/partials/Navbar";
 import Footer from "@/pages/partials/Footer";
-import Hero from "@/pages/landing/Hero";
-import About from "@/pages/landing/About";
-import DivisionGrid from "@/pages/landing/DivisionGrid";
-import AchievementTimeline from "@/pages/landing/AchievementTimeline";
-import TeamMembers from "@/pages/landing/TeamMembers";
-import Gallery from "@/pages/landing/Gallery";
+import Hero from "@/pages/hero/page";
+import About from "@/pages/about/page";
+import DivisionGrid from "@/pages/divisions/page";
+import AchievementTimeline from "@/pages/achievements/page";
+import TeamMembers from "@/pages/team/page";
+import Gallery from "@/pages/gallery/page";
 
 export default function MainLayout() {
     return (

@@ -1,0 +1,136 @@
+'use client';
+
+import { galleryImages } from "@/lib/data";
+import Image from "next/image";
+import { Maximize2, ArrowRight } from "lucide-react";
+
+// Swiper imports
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+
+export default function Gallery() {
+    return (
+        <section className="py-24 bg-slate-950 relative overflow-hidden" id="gallery">
+            {/* Seamless Transition Gradients */}
+            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-950 to-transparent z-10 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-10 pointer-events-none" />
+
+            {/* Background Decoration */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
+            </div>
+
+            {/* Subtle Gradient Blobs */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[10%] right-[20%] w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[100px]" />
+                <div className="absolute bottom-[10%] left-[20%] w-[500px] h-[500px] bg-violet-500/5 rounded-full blur-[100px]" />
+            </div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="mb-20 flex flex-col items-center justify-center gap-6 text-center">
+                    <div>
+                        <h2 className="text-4xl md:text-6xl font-bold text-white font-gochi leading-none">
+                            GALERI
+                        </h2>
+                    </div>
+                </div>
+
+                {/* Swiper Slider Layout */}
+                <div className="w-full relative px-4 md:px-12">
+                    <Swiper
+                        effect={'coverflow'}
+                        grabCursor={true}
+                        centeredSlides={true}
+                        loop={true}
+                        slidesPerView={'auto'}
+                        coverflowEffect={{
+                            rotate: 0,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 2.5,
+                            slideShadows: false,
+                        }}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        }}
+                        modules={[EffectCoverflow, Autoplay]}
+                        className="w-full py-12"
+                        breakpoints={{
+                            320: {
+                                slidesPerView: 1,
+                                spaceBetween: 20
+                            },
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 30
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 40
+                            }
+                        }}
+                    >
+                        {galleryImages.map((src, index) => (
+                            <SwiperSlide key={index} className="w-[280px] sm:w-[350px] md:w-[400px] !h-[400px] relative">
+                                <div
+                                    className="relative w-full h-full group rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl transition-transform duration-300 hover:scale-105"
+                                >
+                                    {/* Image - Direct Child of Relative Container */}
+                                    <Image
+                                        src={src}
+                                        alt={`Dokumentasi ${index + 1}`}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                                        priority={index < 3} // Load first few images eagerly
+                                    />
+
+                                    {/* Gradient overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
+
+                                    {/* Hover Overlay Info */}
+                                    <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                            <div className="flex justify-between items-end">
+                                                <div>
+                                                    <p className="text-cyan-400 font-mono text-xs mb-1">IMG_RAW_{100 + index}.CR2</p>
+                                                    <h3 className="text-white font-bold text-lg">Dokumentasi</h3>
+                                                </div>
+
+                                                <div className="flex gap-2">
+                                                    <button className="p-2 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-cyan-500 hover:text-black transition-colors">
+                                                        <Maximize2 className="w-4 h-4" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Persistent Corner Decor */}
+                                    <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm border border-white/10 px-2 py-1 rounded text-[10px] font-mono text-slate-300 uppercase z-10">
+                                        Polinema Robotics
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+
+                {/* View All Button */}
+                <div className="mt-20 flex justify-center">
+                    <button className="group relative px-8 py-3 bg-slate-900 border border-slate-700 hover:border-cyan-500 text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+                        <span className="relative z-10 flex items-center gap-2 font-mono font-bold">
+                            LIHAT SEMUA GALERI <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </button>
+                </div>
+            </div>
+
+
+        </section>
+    );
+}

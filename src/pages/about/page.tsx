@@ -10,9 +10,16 @@ const TechCore = dynamic(() => import('@/components/3d/TechCore'), { ssr: false 
 export default function About() {
     return (
         <section className="py-24 bg-slate-950 relative overflow-hidden" id="about">
+            {/* Seamless Transition Gradients */}
+            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-950 to-transparent z-10 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-10 pointer-events-none" />
+
             {/* Background Decoration */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-violet-500/5 to-transparent" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
+            </div>
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-violet-500/5 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
