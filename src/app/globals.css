@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+
+  --color-slate-950: #020617;
+  --color-cyan-400: #22d3ee;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #f97316;
+}
+
+/* Custom Utilities if needed, but TW v4 handles most */
+/* Custom Utilities if needed, but TW v4 handles most */
+html {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body {
+  background-color: var(--color-slate-950);
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
