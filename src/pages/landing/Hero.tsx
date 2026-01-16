@@ -22,18 +22,18 @@ export default function Hero() {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-slate-800 text-cyan-400 mb-8 backdrop-blur-sm"
                 >
                     <Zap className="w-4 h-4 fill-current" />
-                    <span className="text-sm font-medium tracking-wide">POWERED BY PASSION</span>
+                    <span className="text-sm font-medium tracking-wide">DITENAGAI OLEH GAIRAH</span>
                 </motion.div> */}
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 font-mono"
+                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 font-gochi"
                 >
-                    INNOVATING <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-violet-400 to-orange-400">
-                        BEYOND LIMITS
+                    BERINOVASI <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-violet-400 to-orange-400 font-gochi tracking-widest">
+                        TANPA BATAS
                     </span>
                 </motion.h1>
 
@@ -43,8 +43,8 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
-                    The Official Home of <span className="text-white font-semibold">Polinema Robotics Team</span>.
-                    Engineering the future through autonomy, precision, and relentless curiosity.
+                    Website Resmi <span className="text-white font-semibold">Tim Robotika Polinema</span>.
+                    Merancang masa depan melalui otonomi, presisi, dan rasa ingin tahu yang tak henti-hentinya.
                 </motion.p>
 
                 <motion.div
@@ -55,14 +55,14 @@ export default function Hero() {
                 >
                     <button className="group relative px-8 py-4 bg-white text-slate-950 font-bold text-lg rounded-full overflow-hidden hover:scale-105 transition-transform duration-300">
                         <span className="relative z-10 flex items-center gap-2">
-                            Explore Implementations <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            Jelajahi Divisi <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </span>
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-violet-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </button>
 
                     <button className="px-8 py-4 bg-slate-900 text-white font-bold text-lg rounded-full border border-slate-800 hover:bg-slate-800 transition-colors flex items-center gap-2">
                         <Cpu className="w-5 h-5 text-slate-400" />
-                        View Documentation
+                        Lihat Dokumentasi
                     </button>
                 </motion.div>
             </div>

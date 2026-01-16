@@ -10,9 +10,9 @@ export default function Gallery() {
                 <div className="mb-12 flex items-end justify-between">
                     <div>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 font-mono">
-                            VISUAL <span className="text-cyan-400">LOGS</span>
+                            LOG <span className="text-cyan-400">VISUAL</span>
                         </h2>
-                        <p className="text-slate-400">Capturing moments of innovation.</p>
+                        <p className="text-slate-400">Mengabadikan momen inovasi.</p>
                     </div>
                 </div>
 

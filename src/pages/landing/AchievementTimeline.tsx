@@ -11,9 +11,9 @@ export default function AchievementTimeline() {
             <div className="container mx-auto px-4 max-w-4xl relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-mono">
-                        HALL OF <span className="text-yellow-400">GLORY</span>
+                        AULA <span className="text-yellow-400">KEJAYAAN</span>
                     </h2>
-                    <p className="text-slate-400">Proving excellence through national and international competitions.</p>
+                    <p className="text-slate-400">Membuktikan keunggulan melalui kompetisi nasional dan internasional.</p>
                 </div>
 
                 <div className="relative">
@@ -68,7 +68,7 @@ export default function AchievementTimeline() {
                                                     ach.medal === "Silver" ? "bg-slate-300/10 text-slate-300" :
                                                         "bg-amber-700/10 text-amber-600"
                                             )}>
-                                                {ach.medal} Medal
+                                                {ach.medal} Medali
                                             </div>
                                         </div>
                                     </div>

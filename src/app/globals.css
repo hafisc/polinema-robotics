@@ -3,6 +3,7 @@
 @theme {
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains);
+  --font-gochi: var(--font-gochi);
 
   --color-slate-950: #020617;
   --color-cyan-400: #22d3ee;

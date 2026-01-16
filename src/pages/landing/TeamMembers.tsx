@@ -10,9 +10,9 @@ export default function TeamMembers() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-mono">
-                        THE <span className="text-violet-500">ENGINEERS</span>
+                        <span className="text-violet-500">INSINYUR</span> KAMI
                     </h2>
-                    <p className="text-slate-400">Meet the minds behind the machines.</p>
+                    <p className="text-slate-400">Berkenalan dengan para ahli di balik mesin.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

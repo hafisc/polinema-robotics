@@ -18,7 +18,7 @@ export default function Footer() {
                             </span>
                         </Link>
                         <p className="text-slate-400 max-w-sm mb-6 leading-relaxed">
-                            Polinema Robotics Team is a student-led organization dedicated to advancing robotics technology through innovation, competition, and research.
+                            Tim Robotika Polinema adalah organisasi mahasiswa yang berdedikasi untuk memajukan teknologi robotika melalui inovasi, kompetisi, dan penelitian.
                         </p>
                         <div className="flex gap-4">
                             {[Instagram, Linkedin,].map((Icon, i) => (
@@ -34,7 +34,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-white font-bold mb-6">Divisions</h4>
+                        <h4 className="text-white font-bold mb-6">Divisi</h4>
                         <ul className="space-y-4">
                             {['ABUROBONEMA', 'AROC-PL', 'ROBSONEMA', 'ROTAMA', 'ROBOSAREMA'].map((item) => (
                                 <li key={item}>
@@ -47,7 +47,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-white font-bold mb-6">Contact</h4>
+                        <h4 className="text-white font-bold mb-6">Kontak</h4>
                         <ul className="space-y-4 text-slate-400">
                             <li>Jln. Soekarno Hatta No.9, Malang</li>
                             <li>sekretariat@polinema.ac.id</li>
@@ -57,10 +57,10 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                    <p>© {new Date().getFullYear()} Polinema Robotics Team.</p>
+                    <p>© {new Date().getFullYear()} Tim Robotika Polinema.</p>
                     <div className="flex gap-6">
-                        <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+                        <Link href="#" className="hover:text-white transition-colors">Kebijakan Privasi</Link>
+                        <Link href="#" className="hover:text-white transition-colors">Syarat Layanan</Link>
                     </div>
                 </div>
             </div>

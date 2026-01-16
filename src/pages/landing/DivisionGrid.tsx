@@ -16,7 +16,7 @@ export default function DivisionGrid() {
                     className="mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-mono">
-                        OUR <span className="text-cyan-400">DIVISIONS</span>
+                        DIVISI <span className="text-cyan-400">KAMI</span>
                     </h2>
                     <div className="h-1 w-20 bg-orange-500 rounded-full" />
                 </motion.div>
@@ -25,6 +25,7 @@ export default function DivisionGrid() {
                     {teams.map((team, index) => (
                         <motion.div
                             key={team.id}
+                            id={team.id}
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
