@@ -1,8 +1,8 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera, Environment, Float, Html } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera, Environment, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 function DroneRobot() {
@@ -35,30 +35,29 @@ function DroneRobot() {
         }
     });
 
-    // Materials
-    const bodyMaterial = new THREE.MeshPhysicalMaterial({
-        color: '#ffffff',
-        roughness: 0.2,
-        metalness: 0.1,
-        clearcoat: 1,
-        clearcoatRoughness: 0.1,
-    }); // Glossy white plastic
-
-    const visorMaterial = new THREE.MeshStandardMaterial({
-        color: '#111111',
-        roughness: 0.2,
-        metalness: 0.8,
-    }); // Dark glass
-
-    const glowMaterial = new THREE.MeshBasicMaterial({
-        color: '#00ffff', // Cyan glow
-    });
-
-    const jointMaterial = new THREE.MeshStandardMaterial({
-        color: '#333333',
-        roughness: 0.7,
-        metalness: 0.5,
-    });
+    // Materials - Memoized to prevent flickering/re-creation on state change
+    const materials = useMemo(() => ({
+        body: new THREE.MeshPhysicalMaterial({
+            color: '#cbd5e1', // Slate-300 (Silver-ish) instead of pure brightness
+            roughness: 0.3,   // Balanced reflection
+            metalness: 0.6,   // Higher metalness for "cool" reflections
+            clearcoat: 1,
+            clearcoatRoughness: 0.2,
+        }),
+        visor: new THREE.MeshStandardMaterial({
+            color: '#111111',
+            roughness: 0.2,
+            metalness: 0.8,
+        }),
+        glow: new THREE.MeshBasicMaterial({
+            color: '#00ffff',
+        }),
+        joint: new THREE.MeshStandardMaterial({
+            color: '#333333',
+            roughness: 0.7,
+            metalness: 0.5,
+        })
+    }), []);
 
     return (
         <group
@@ -72,29 +71,29 @@ function DroneRobot() {
                 {/* Main Head Shape */}
                 <mesh position={[0, 0, 0]}>
                     <capsuleGeometry args={[0.35, 0.3, 4, 16]} />
-                    <primitive object={bodyMaterial} />
+                    <primitive object={materials.body} />
                 </mesh>
 
                 {/* Visor Area (Black Glass) */}
                 <mesh position={[0, 0.05, 0.28]} rotation={[0.1, 0, 0]}>
                     <boxGeometry args={[0.5, 0.25, 0.15]} />
-                    <primitive object={visorMaterial} />
+                    <primitive object={materials.visor} />
                 </mesh>
 
                 {/* Eyes (Glowing) */}
                 <mesh position={[-0.12, 0.05, 0.36]} rotation={[0.1, 0, 0]}>
                     <sphereGeometry args={[0.04]} />
-                    <primitive object={glowMaterial} />
+                    <primitive object={materials.glow} />
                 </mesh>
                 <mesh position={[0.12, 0.05, 0.36]} rotation={[0.1, 0, 0]}>
                     <sphereGeometry args={[0.04]} />
-                    <primitive object={glowMaterial} />
+                    <primitive object={materials.glow} />
                 </mesh>
 
                 {/* Antenna */}
                 <mesh position={[0, 0.4, 0]}>
                     <cylinderGeometry args={[0.01, 0.01, 0.3]} />
-                    <primitive object={jointMaterial} />
+                    <primitive object={materials.joint} />
                 </mesh>
                 <mesh position={[0, 0.55, 0]}>
                     <sphereGeometry args={[0.03]} />
@@ -105,29 +104,29 @@ function DroneRobot() {
             {/* NECK */}
             <mesh position={[0, 0.1, 0]}>
                 <cylinderGeometry args={[0.15, 0.15, 0.2]} />
-                <primitive object={jointMaterial} />
+                <primitive object={materials.joint} />
             </mesh>
 
             {/* BODY */}
             <mesh ref={body} position={[0, -0.4, 0]}>
                 <sphereGeometry args={[0.45, 32, 32]} />
-                <primitive object={bodyMaterial} />
+                <primitive object={materials.body} />
             </mesh>
 
             {/* Chest Light */}
             <mesh position={[0, -0.3, 0.4]} rotation={[0.2, 0, 0]}>
                 <circleGeometry args={[0.08]} />
-                <primitive object={glowMaterial} />
+                <primitive object={materials.glow} />
             </mesh>
 
             {/* FLOATING HANDS */}
             <mesh ref={leftHand} position={[-0.6, -0.5, 0.2]}>
                 <sphereGeometry args={[0.12]} />
-                <primitive object={bodyMaterial} />
+                <primitive object={materials.body} />
             </mesh>
             <mesh ref={rightHand} position={[0.6, -0.5, 0.2]}>
                 <sphereGeometry args={[0.12]} />
-                <primitive object={bodyMaterial} />
+                <primitive object={materials.body} />
             </mesh>
         </group>
     );
