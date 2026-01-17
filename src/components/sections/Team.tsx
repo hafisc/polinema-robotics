@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { members } from "@/lib/data";
-import { Github, Linkedin, Instagram, User } from "lucide-react";
+import { Github, Linkedin, Instagram,  User } from "lucide-react";
 
 export default function TeamMembers() {
     return (
@@ -10,9 +10,9 @@ export default function TeamMembers() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-mono">
-                        <span className="text-violet-500">INSINYUR</span> KAMI
+                        <span className="text-violet-500">DOSEN PEMBIMBING</span> KAMI
                     </h2>
-                    <p className="text-slate-400">Berkenalan dengan para ahli di balik mesin.</p>
+                    <p className="text-slate-400">Berkenalan dengan para ahli yang membimbing kami.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

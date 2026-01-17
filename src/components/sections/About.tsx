@@ -37,7 +37,7 @@ export default function About() {
                         </h2>
 
                         <p className="text-lg text-slate-400 mb-6 leading-relaxed">
-                            Kami adalah <strong className="text-white">Unit Kegiatan Mahasiswa (UKM)</strong> resmi di Politeknik Negeri Malang yang menjadi pusat inovasi dan riset teknologi robotika.
+                            Kami adalah salah satu <strong className="text-white">komunitas minat bakat</strong> resmi di Politeknik Negeri Malang yang menjadi pusat inovasi dan riset teknologi robotika.
                         </p>
                         <p className="text-lg text-slate-400 mb-8 leading-relaxed">
                             Bukan sekadar merakit mesin, kami membangun masa depan melalui kode, sirkuit, dan mekanika presisi. Dari robot tempur hingga humanoid cerdas, kami membuktikan bahwa batasan hanyalah tantangan yang belum terpecahkan.
