@@ -110,7 +110,7 @@ export default function Gallery() {
                 <div className="mt-20 flex justify-center">
                     <button className="group relative px-8 py-3 bg-slate-900 border border-slate-700 hover:border-cyan-500 text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
                         <span className="relative z-10 flex items-center gap-2 font-mono font-bold">
-                            LIHAT SEMUA GALERI <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            LIHAT SEMUA<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </span>
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </button>

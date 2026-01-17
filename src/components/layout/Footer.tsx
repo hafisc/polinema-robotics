@@ -1,6 +1,6 @@
 'use client';
 
-import { Cpu, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -21,36 +21,30 @@ export default function Footer() {
                             Tim Robotika Polinema adalah organisasi mahasiswa yang berdedikasi untuk memajukan teknologi robotika melalui inovasi, kompetisi, dan penelitian.
                         </p>
                         <div className="flex gap-4">
-                            {[Instagram, Linkedin,].map((Icon, i) => (
-                                <a
-                                    key={i}
-                                    href="#"
-                                    className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-500 hover:text-slate-950 hover:border-cyan-500 transition-all"
-                                >
-                                    <Icon className="w-5 h-5" />
-                                </a>
-                            ))}
+                            <a
+                                href="https://www.instagram.com/polinemarobotics"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-500 hover:text-slate-950 hover:border-cyan-500 transition-all"
+                            >
+                                <Instagram className="w-5 h-5" />
+                            </a>
+                            <a
+                                href="#"
+                                className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-500 hover:text-slate-950 hover:border-cyan-500 transition-all"
+                            >
+                                <Linkedin className="w-5 h-5" />
+                            </a>
                         </div>
                     </div>
 
-                    <div>
-                        <h4 className="text-white font-bold mb-6">Divisi</h4>
-                        <ul className="space-y-4">
-                            {['ABUROBONEMA', 'AROC-PL', 'ROBSONEMA', 'ROTAMA', 'ROBOSAREMA'].map((item) => (
-                                <li key={item}>
-                                    <Link href="#" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                                        {item}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
 
-                    <div>
+
+                    <div className="md:col-start-4">
                         <h4 className="text-white font-bold mb-6">Kontak</h4>
                         <ul className="space-y-4 text-slate-400">
                             <li>Jln. Soekarno Hatta No.9, Malang</li>
-                            <li>sekretariat@polinema.ac.id</li>
+                            <li>polinemarobotics@polinema.ac.id</li>
                             <li>+62 341 404424</li>
                         </ul>
                     </div>

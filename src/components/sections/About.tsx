@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { motion } from "framer-motion";
-import { Trophy, Users } from "lucide-react";
+
 
 // Dynamically import the 3D component with no SSR to avoid hydration mismatch
 const TechCore = dynamic(() => import('@/components/3d/TechCore'), { ssr: false });
@@ -32,29 +32,18 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-mono leading-tight">
-                            APA ITU <br />
-                            <span className="text-cyan-400">POLINEMA ROBOTICS?</span>
+                            <span className="block text-2xl md:text-3xl font-gochi text-slate-400 mb-2">Mengenal Lebih Dekat</span>
+                            <span className="text-cyan-400">POLINEMA ROBOTICS</span>
                         </h2>
 
                         <p className="text-lg text-slate-400 mb-6 leading-relaxed">
                             Kami adalah salah satu <strong className="text-white">komunitas minat bakat</strong> resmi di Politeknik Negeri Malang yang menjadi pusat inovasi dan riset teknologi robotika.
                         </p>
                         <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-                            Bukan sekadar merakit mesin, kami membangun masa depan melalui kode, sirkuit, dan mekanika presisi. Dari robot tempur hingga humanoid cerdas, kami membuktikan bahwa batasan hanyalah tantangan yang belum terpecahkan.
+                            Bukan sekadar perakit mesin, kami adalah inisiator masa depan. Melalui paduan <strong>kode cerdas, sirkuit presisi, dan mekanika kokoh</strong>, kami mengubah ide menjadi juara di kancah nasional maupun internasional.
                         </p>
 
-                        <div className="grid grid-cols-2 gap-6">
-                            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-colors group">
-                                <Trophy className="w-8 h-8 text-yellow-500 mb-3 group-hover:scale-110 transition-transform" />
-                                <h4 className="text-white font-bold text-xl mb-1">50+</h4>
-                                <p className="text-sm text-slate-500">Penghargaan Nasional</p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-violet-500/50 transition-colors group">
-                                <Users className="w-8 h-8 text-violet-500 mb-3 group-hover:scale-110 transition-transform" />
-                                <h4 className="text-white font-bold text-xl mb-1">100+</h4>
-                                <p className="text-sm text-slate-500">Anggota Aktif</p>
-                            </div>
-                        </div>
+
                     </motion.div>
 
                     {/* Right Visual with 3D Element */}
