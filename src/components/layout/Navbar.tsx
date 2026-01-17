@@ -185,7 +185,7 @@ export default function Navbar() {
                                     </AnimatePresence>
                                 </div>
                             ))}
-                            <button className="w-full py-3 bg-cyan-500 text-slate-950 font-bold rounded-xl mt-4">
+                            <button className="w-full py-3 bg-slate-100 text-slate-950 font-bold rounded-xl mt-4">
                                 Bergabung
                             </button>
                         </div>
