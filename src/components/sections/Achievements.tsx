@@ -10,8 +10,8 @@ export default function AchievementTimeline() {
         <section className="py-24 bg-slate-950 relative overflow-hidden" id="achievements">
             <div className="container mx-auto px-4 max-w-4xl relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-mono">
-                        AULA <span className="text-yellow-400">KEJAYAAN</span>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-gochi">
+                        Prestasi <span className="text-yellow-400">Robotika</span>
                     </h2>
                     <p className="text-slate-400">Membuktikan keunggulan melalui kompetisi nasional dan internasional.</p>
                 </div>
