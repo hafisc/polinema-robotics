@@ -10,7 +10,7 @@ export default function TeamMembers() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-gochi">
-                        <span className="text-violet-500">INSINYUR</span> KAMI
+                        <span className="text-violet-500">DOSEN PEMBIMBING</span> KAMI
                     </h2>
                     <p className="text-slate-400">Berkenalan dengan para ahli yang membimbing kami.</p>
                 </div>
