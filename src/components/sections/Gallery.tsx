@@ -31,7 +31,7 @@ export default function Gallery() {
             <div className="container mx-auto px-4 relative z-10">
                 <div className="mb-20 flex flex-col items-center justify-center gap-6 text-center">
                     <div>
-                        <h2 className="text-4xl md:text-6xl font-bold text-white font-gochi leading-none mb-4">
+                        <h2 className="text-4xl md:text-6xl font-bold text-white poppins leading-none mb-4">
                             GALERI
                         </h2>
                         <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">

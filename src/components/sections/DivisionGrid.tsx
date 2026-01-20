@@ -17,7 +17,7 @@ export default function DivisionGrid() {
                     viewport={{ once: true }}
                     className="mb-16 text-center"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-gochi">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 poppins">
                         DIVISI <span className="text-cyan-400">KAMI</span>
                     </h2>
                     <div className="h-1 w-20 bg-orange-500 rounded-full mx-auto" />
