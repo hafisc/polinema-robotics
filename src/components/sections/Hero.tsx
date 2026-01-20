@@ -29,10 +29,10 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-gochi leading-[0.8] py-4"
+                    className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 poppins leading-[0.8] py-4"
                 >
                     BERINOVASI <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-violet-400 to-orange-400 font-gochi tracking-widest px-2">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-violet-400 to-orange-400 poppins tracking-widest px-2">
                         TANPA BATAS
                     </span>
                 </motion.h1>
