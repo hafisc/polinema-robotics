@@ -1,7 +1,7 @@
 'use client';
 
-import { teams } from "@/lib/data";
-import { ArrowLeft, Cpu, Trophy, Star, Medal } from "lucide-react";
+import { teams, galleryImages } from "@/lib/data";
+import { ArrowLeft, Trophy, Star, Medal, Github, Linkedin, Instagram, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
@@ -26,6 +26,40 @@ export default function Robosarema() {
         { year: "2020", title: "Juara Harapan", level: "Nasional" },
     ];
 
+    // Mock Data for Team Members
+    const teamMembers = [
+        { name: "Aditya Pratama", role: "Ketua Tim", image: "", socials: { instagram: "#", linkedin: "#" } },
+        { name: "Maya Indah", role: "Divisi Mekanik", image: "", socials: { instagram: "#", github: "#" } },
+        { name: "Reza Kurniawan", role: "Divisi Elektronik", image: "", socials: { linkedin: "#" } },
+        { name: "Sinta Dewi", role: "Divisi Programmer", image: "", socials: { github: "#", linkedin: "#" } },
+        { name: "Bayu Saputra", role: "Divisi Mekanik", image: "", socials: { instagram: "#" } },
+        { name: "Dewi Lestari", role: "Divisi Elektronik", image: "", socials: { linkedin: "#" } },
+    ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 120,
+                damping: 20
+            } as const
+        }
+    };
+
     return (
         <main className="min-h-screen bg-slate-950 text-slate-200 flex flex-col font-sans selection:bg-cyan-500/30">
             <Navbar />
@@ -47,7 +81,7 @@ export default function Robosarema() {
                     </div>
 
                     <div className="container mx-auto px-4 relative z-10 pt-20 text-center">
-                        
+
 
                         <motion.h1
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -70,8 +104,8 @@ export default function Robosarema() {
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10 -mt-20 pb-24">
-                    
-                    
+
+
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                         {/* Main Content Area */}
@@ -90,21 +124,24 @@ export default function Robosarema() {
                                     <p className="text-slate-300 leading-relaxed mb-6 text-lg">
                                         Tim <strong>{team.name}</strong> berfokus pada pengembangan robot otonom yang dirancang untuk misi penyelamatan di medan ekstrem. Kami mengintegrasikan sistem navigasi cerdas dan teknologi visi komputer untuk mendeteksi serta mengevakuasi korban secara cepat dan akurat.
                                     </p>
-                                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <motion.ul
+                                        variants={containerVariants}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true, margin: "-50px" }}
+                                        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                                    >
                                         {['Navigasi Otonom & Pathfinding', 'Kinematika Robot Berkaki (Legged)', 'Computer Vision', 'Mikrokontroler STM32/ESP32'].map((item, i) => (
                                             <motion.li
                                                 key={i}
-                                                initial={{ opacity: 0, x: -10 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: i * 0.1 }}
-                                                className="flex items-center gap-3 text-slate-400 p-3 rounded-xl bg-slate-950/50 border border-slate-900 hover:border-cyan-500/30 transition-colors"
+                                                variants={itemVariants}
+                                                className="flex items-center gap-3 text-slate-400 p-3 rounded-xl bg-slate-950/50 border border-slate-900 hover:border-cyan-500/30 transition-colors group"
                                             >
-                                                <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                                <div className="w-2 h-2 rounded-full bg-cyan-500 group-hover:shadow-[0_0_10px_rgba(6,182,212,0.8)] transition-shadow" />
                                                 {item}
                                             </motion.li>
                                         ))}
-                                    </ul>
+                                    </motion.ul>
                                 </div>
                             </section>
 
@@ -119,15 +156,18 @@ export default function Robosarema() {
                                     Hall of Fame
                                 </motion.h2>
 
-                                <div className="space-y-4">
+                                <motion.div
+                                    variants={containerVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    className="space-y-4"
+                                >
                                     {achievements.map((ach, index) => (
                                         <motion.div
                                             key={index}
-                                            initial={{ opacity: 0, x: -20 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: index * 0.05 }}
-                                            className="group flex items-center p-4 rounded-2xl bg-slate-900/30 border border-slate-800 hover:bg-slate-800/50 hover:border-slate-700 transition-all"
+                                            variants={itemVariants}
+                                            className="group flex items-center p-4 rounded-2xl bg-slate-900/30 border border-slate-800 hover:bg-slate-800/50 hover:border-slate-700 transition-all cursor-default"
                                         >
                                             <div className="w-16 font-mono text-slate-500 font-bold text-xl group-hover:text-cyan-400 transition-colors">{ach.year}</div>
                                             <div className="flex-grow">
@@ -142,7 +182,120 @@ export default function Robosarema() {
                                             </div>
                                         </motion.div>
                                     ))}
-                                </div>
+                                </motion.div>
+                            </section>
+
+                            {/* Section: Anggota Tim */}
+                            <section>
+                                <motion.h2
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    className="text-3xl font-bold text-white mb-8 flex items-center gap-3"
+                                >
+                                    <span className="w-10 h-1 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full" />
+                                    Anggota Tim
+                                </motion.h2>
+
+                                <motion.div
+                                    variants={containerVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                                >
+                                    {teamMembers.map((member, index) => (
+                                        <motion.div
+                                            key={index}
+                                            variants={itemVariants}
+                                            className="group relative bg-slate-900/50 rounded-2xl p-5 border border-slate-800 hover:border-cyan-500/50 transition-all hover:-translate-y-1"
+                                        >
+                                            <div className="flex items-center gap-4">
+                                                <div className="w-16 h-16 rounded-full bg-slate-800 border mr-1 border-slate-700 flex items-center justify-center overflow-hidden group-hover:border-cyan-500 transition-colors">
+                                                    {member.image ? (
+                                                        <Image
+                                                            src={member.image}
+                                                            alt={member.name}
+                                                            width={64}
+                                                            height={64}
+                                                            className="object-cover w-full h-full"
+                                                        />
+                                                    ) : (
+                                                        <User className="w-8 h-8 text-slate-500" />
+                                                    )}
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-white font-bold text-lg group-hover:text-cyan-400 transition-colors">
+                                                        {member.name}
+                                                    </h4>
+                                                    <p className="text-slate-400 text-sm font-mono">{member.role}</p>
+                                                </div>
+                                            </div>
+
+                                            {/* Social Links Overlay */}
+                                            <div className="absolute top-5 right-5 flex gap-2">
+                                                {member.socials.github && (
+                                                    <Link href={member.socials.github} className="text-slate-600 hover:text-white transition-colors">
+                                                        <Github className="w-4 h-4" />
+                                                    </Link>
+                                                )}
+                                                {member.socials.linkedin && (
+                                                    <Link href={member.socials.linkedin} className="text-slate-600 hover:text-white transition-colors">
+                                                        <Linkedin className="w-4 h-4" />
+                                                    </Link>
+                                                )}
+                                                {member.socials.instagram && (
+                                                    <Link href={member.socials.instagram} className="text-slate-600 hover:text-white transition-colors">
+                                                        <Instagram className="w-4 h-4" />
+                                                    </Link>
+                                                )}
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </motion.div>
+                            </section>
+
+                            {/* Section: Galeri Kegiatan */}
+                            <section>
+                                <motion.h2
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    className="text-3xl font-bold text-white mb-8 flex items-center gap-3"
+                                >
+                                    <span className="w-10 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full" />
+                                    Galeri Kegiatan
+                                </motion.h2>
+
+                                <motion.div
+                                    variants={containerVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    className="grid grid-cols-2 md:grid-cols-3 gap-4"
+                                >
+                                    {galleryImages.slice(0, 6).map((src, index) => (
+                                        <motion.div
+                                            key={index}
+                                            variants={itemVariants}
+                                            className="relative aspect-square rounded-2xl overflow-hidden group border border-slate-800 cursor-pointer"
+                                        >
+                                            <Image
+                                                src={src}
+                                                alt={`Galeri ${index + 1}`}
+                                                fill
+                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                sizes="(max-width: 768px) 50vw, 33vw"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                            <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                                <span className="text-xs font-mono text-cyan-400 bg-cyan-950/30 px-2 py-1 rounded border border-cyan-500/30">
+                                                    DOKUMENTASI
+                                                </span>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </motion.div>
                             </section>
                         </div>
 

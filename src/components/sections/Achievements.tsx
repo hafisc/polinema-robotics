@@ -20,7 +20,21 @@ export default function AchievementTimeline() {
                     {/* Vertical Line */}
                     <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-700 to-transparent" />
 
-                    <div className="space-y-12">
+                    <motion.div
+                        className="space-y-12"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={{
+                            hidden: { opacity: 0 },
+                            visible: {
+                                opacity: 1,
+                                transition: {
+                                    staggerChildren: 0.2
+                                }
+                            }
+                        }}
+                    >
                         {achievements.map((ach, index) => {
                             const isEven = index % 2 === 0;
                             const isGold = ach.medal === "Gold";
@@ -28,10 +42,18 @@ export default function AchievementTimeline() {
                             return (
                                 <motion.div
                                     key={ach.id}
-                                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                    variants={{
+                                        hidden: { opacity: 0, x: isEven ? -50 : 50 },
+                                        visible: {
+                                            opacity: 1,
+                                            x: 0,
+                                            transition: {
+                                                type: "spring",
+                                                stiffness: 100,
+                                                damping: 20
+                                            }
+                                        }
+                                    }}
                                     className={cn(
                                         "relative flex w-full",
                                         isEven ? "md:flex-row-reverse" : "md:flex-row" // Alternating sides
@@ -75,7 +97,7 @@ export default function AchievementTimeline() {
                                 </motion.div>
                             );
                         })}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

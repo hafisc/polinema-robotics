@@ -2,7 +2,8 @@
 
 import { galleryImages } from "@/lib/data";
 import Image from "next/image";
-import { Maximize2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -28,8 +29,28 @@ export default function Gallery() {
                 <div className="absolute bottom-[10%] left-[20%] w-[500px] h-[500px] bg-violet-500/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="mb-20 flex flex-col items-center justify-center gap-6 text-center">
+            <motion.div
+                className="container mx-auto px-4 relative z-10"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                        opacity: 1,
+                        transition: {
+                            staggerChildren: 0.2
+                        }
+                    }
+                }}
+            >
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 30 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                    }}
+                    className="mb-20 flex flex-col items-center justify-center gap-6 text-center"
+                >
                     <div>
                         <h2 className="text-4xl md:text-6xl font-bold text-white poppins leading-none mb-4">
                             GALERI
@@ -38,10 +59,16 @@ export default function Gallery() {
                             Mengabadikan jejak inovasi, atmosfer kompetisi, dan momen berharga dalam perjalanan teknologi kami.
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Swiper Slider Layout */}
-                <div className="w-full relative px-4 md:px-12">
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, scale: 0.95 },
+                        visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } }
+                    }}
+                    className="w-full relative px-4 md:px-12"
+                >
                     <Swiper
                         effect={'coverflow'}
                         grabCursor={true}
@@ -94,7 +121,7 @@ export default function Gallery() {
                                     {/* Gradient overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
 
-                                    
+
 
                                     {/* Persistent Corner Decor */}
                                     <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm border border-white/10 px-2 py-1 rounded text-[10px] font-mono text-slate-300 uppercase z-10">
@@ -104,18 +131,24 @@ export default function Gallery() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                </div>
+                </motion.div>
 
                 {/* View All Button */}
-                <div className="mt-20 flex justify-center">
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                    }}
+                    className="mt-20 flex justify-center"
+                >
                     <button className="group relative px-8 py-3 bg-slate-900 border border-slate-700 hover:border-cyan-500 text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
                         <span className="relative z-10 flex items-center gap-2 font-mono font-bold">
                             LIHAT SEMUA<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </span>
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </button>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
 
         </section>

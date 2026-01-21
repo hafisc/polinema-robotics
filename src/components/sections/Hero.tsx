@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { ArrowRight, Cpu, Zap } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
+
 
 export default function Hero() {
     return (
@@ -14,7 +14,21 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
             </div>
 
-            <div className="container mx-auto px-4 z-10 text-center">
+            <motion.div
+                className="container mx-auto px-4 z-10 text-center"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                        opacity: 1,
+                        transition: {
+                            staggerChildren: 0.2,
+                            delayChildren: 0.3
+                        }
+                    }
+                }}
+            >
                 {/* <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -26,9 +40,10 @@ export default function Hero() {
                 </motion.div> */}
 
                 <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    variants={{
+                        hidden: { opacity: 0, y: 30 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                    }}
                     className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 poppins leading-[0.8] py-4"
                 >
                     BERINOVASI <br />
@@ -38,9 +53,10 @@ export default function Hero() {
                 </motion.h1>
 
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+                    }}
                     className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
                     Website Resmi <span className="text-white font-semibold">Polinema Robotics</span>.
@@ -48,9 +64,10 @@ export default function Hero() {
                 </motion.p>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
+                    variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+                    }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
                     <button className="group relative px-8 py-4 bg-white text-slate-950 font-bold text-lg rounded-full overflow-hidden hover:scale-105 transition-transform duration-300">
@@ -62,7 +79,7 @@ export default function Hero() {
 
 
                 </motion.div>
-            </div>
+            </motion.div>
 
             {/* Decorative Grid Bottom */}
             <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-slate-950 to-transparent z-20" />

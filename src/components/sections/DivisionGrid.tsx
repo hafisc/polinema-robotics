@@ -23,15 +23,38 @@ export default function DivisionGrid() {
                     <div className="h-1 w-20 bg-orange-500 rounded-full mx-auto" />
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 auto-rows-[300px]">
-                    {teams.map((team, index) => (
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 auto-rows-[300px]"
+                >
+                    {teams.map((team) => (
                         <motion.div
                             key={team.id}
                             id={team.id}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            variants={{
+                                hidden: { opacity: 0, scale: 0.9, y: 20 },
+                                visible: {
+                                    opacity: 1,
+                                    scale: 1,
+                                    y: 0,
+                                    transition: {
+                                        type: "spring",
+                                        stiffness: 100,
+                                        damping: 15
+                                    }
+                                }
+                            }}
                             className={cn(
                                 "group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 p-0 flex flex-col justify-between hover:border-slate-700 transition-colors bg-grid-slate-800/50",
                                 "lg:col-span-2"
@@ -74,8 +97,8 @@ export default function DivisionGrid() {
                             </Link>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </section >
     );
 }

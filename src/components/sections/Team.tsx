@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { members } from "@/lib/data";
-import { Github, Linkedin, Instagram,  User } from "lucide-react";
+import { Github, Linkedin, Instagram, User } from "lucide-react";
 
 export default function TeamMembers() {
     return (
@@ -15,14 +15,36 @@ export default function TeamMembers() {
                     <p className="text-slate-400">Berkenalan dengan para ahli yang membimbing kami.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {members.map((member, index) => (
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.15
+                            }
+                        }
+                    }}
+                >
+                    {members.map((member) => (
                         <motion.div
                             key={member.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            variants={{
+                                hidden: { opacity: 0, y: 30 },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        type: "spring",
+                                        stiffness: 120,
+                                        damping: 20
+                                    }
+                                }
+                            }}
                             className="group relative bg-slate-900 rounded-2xl p-6 border border-slate-800 hover:border-violet-500/50 transition-colors text-center"
                         >
                             <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-slate-700 group-hover:border-violet-500 transition-colors bg-slate-800 flex items-center justify-center">
@@ -61,8 +83,8 @@ export default function TeamMembers() {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </section >
     );
 }

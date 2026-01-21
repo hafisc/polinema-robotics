@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Instagram } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { teams } from '@/lib/data';
 
 interface NavLink {
@@ -29,6 +30,7 @@ export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [hoveredNav, setHoveredNav] = useState<string | null>(null);
     const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+    const [showRecruitmentPopup, setShowRecruitmentPopup] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -50,8 +52,17 @@ export default function Navbar() {
                     }`}
             >
                 <div className="container mx-auto px-4 flex items-center justify-between relative">
-                    <Link href="/" className="flex items-center gap-2 group">
-                        <span className="text-xl font-bold text-white font-mono tracking-tighter">
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <div className="relative w-10 h-10">
+                            <Image
+                                src="/images/logo polinema robotics.png"
+                                alt="Polinema Robotics Logo"
+                                fill
+                                className="object-contain group-hover:scale-110 transition-transform duration-300"
+                                sizes="40px"
+                            />
+                        </div>
+                        <span className="text-lg sm:text-xl font-bold text-white font-mono tracking-tighter">
                             Polinema<span className="text-cyan-400"> Robotics</span>
                         </span>
                     </Link>
@@ -115,7 +126,10 @@ export default function Navbar() {
 
                     {/* Right Section */}
                     <div className="flex items-center gap-4">
-                        <button className="hidden md:block px-5 py-2 bg-slate-100 text-slate-950 text-sm font-bold rounded-full hover:bg-cyan-400 transition-colors">
+                        <button
+                            onClick={() => setShowRecruitmentPopup(true)}
+                            className="hidden md:block px-5 py-2 bg-slate-100 text-slate-950 text-sm font-bold rounded-full hover:bg-cyan-400 transition-colors"
+                        >
                             Bergabung
                         </button>
 
@@ -185,11 +199,59 @@ export default function Navbar() {
                                     </AnimatePresence>
                                 </div>
                             ))}
-                            <button className="w-full py-3 bg-slate-100 text-slate-950 font-bold rounded-xl mt-4">
+                            <button
+                                onClick={() => setShowRecruitmentPopup(true)}
+                                className="w-full py-3 bg-slate-100 text-slate-950 font-bold rounded-xl mt-4"
+                            >
                                 Bergabung
                             </button>
                         </div>
                     </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Recruitment Popup */}
+            <AnimatePresence>
+                {showRecruitmentPopup && (
+                    <>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setShowRecruitmentPopup(false)}
+                            className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[60]"
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-6 z-[70] shadow-2xl"
+                        >
+                            <button
+                                onClick={() => setShowRecruitmentPopup(false)}
+                                className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            <div className="mb-6">
+                                <h3 className="text-xl font-bold text-white mb-2">Info Recruitment</h3>
+                                <p className="text-slate-300 leading-relaxed">
+                                    Mohon maaf, pendaftaran anggota baru <strong>belum dibuka</strong>. Pantau terus Instagram kami untuk informasi terupdate!
+                                </p>
+                            </div>
+
+                            <a
+                                href="https://www.instagram.com/polinemarobotics/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold text-center hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                            >
+                                <Instagram className="w-5 h-5" />
+                                Instagram
+                            </a>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </>

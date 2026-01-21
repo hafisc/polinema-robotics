@@ -22,14 +22,37 @@ export default function About() {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.3
+                            }
+                        }
+                    }}
+                >
 
                     {/* Left Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        variants={{
+                            hidden: { opacity: 0, x: -50 },
+                            visible: {
+                                opacity: 1,
+                                x: 0,
+                                transition: {
+                                    type: "spring",
+                                    stiffness: 100,
+                                    damping: 20,
+                                    duration: 0.8
+                                }
+                            }
+                        }}
                     >
                         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-mono leading-tight">
                             <span className="block text-2xl md:text-3xl font-gochi text-slate-400 mb-2">Mengenal Lebih Dekat</span>
@@ -48,10 +71,19 @@ export default function About() {
 
                     {/* Right Visual with 3D Element */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        variants={{
+                            hidden: { opacity: 0, x: 50 },
+                            visible: {
+                                opacity: 1,
+                                x: 0,
+                                transition: {
+                                    type: "spring",
+                                    stiffness: 100,
+                                    damping: 20,
+                                    duration: 0.8
+                                }
+                            }
+                        }}
                         className="relative h-[400px] md:h-[500px] flex items-center justify-center cursor-grab active:cursor-grabbing"
                     >
                         {/* 3D Scene */}
@@ -59,7 +91,7 @@ export default function About() {
                             <TechCore />
                         </div>
                     </motion.div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
