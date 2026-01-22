@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 
 // Dynamically import the 3D component with no SSR to avoid hydration mismatch
-const TechCore = dynamic(() => import('@/components/3d/TechCore'), { ssr: false });
+const RobotScene = dynamic(() => import('@/components/3d/RobotScene'), { ssr: false });
 
 export default function About() {
     return (
@@ -88,7 +88,7 @@ export default function About() {
                     >
                         {/* 3D Scene */}
                         <div className="w-full h-full z-10">
-                            <TechCore />
+                            <RobotScene />
                         </div>
                     </motion.div>
                 </motion.div>

@@ -35,11 +35,12 @@ export default function Preloader() {
                             className="relative w-24 h-24 md:w-32 md:h-32"
                         >
                             <Image
-                                src="/images/logo polinema robotics.png"
+                                src="/images/logo%20polinema%20robotics.png"
                                 alt="Preloader Logo"
                                 fill
                                 className="object-contain"
                                 priority
+                                sizes="(max-width: 768px) 96px, 128px"
                             />
                         </motion.div>
 
