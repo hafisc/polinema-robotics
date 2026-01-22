@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Environment, OrbitControls, Float } from '@react-three/drei';
+import { Environment, OrbitControls, Float, Center } from '@react-three/drei';
 import RobotModel from './RobotModel';
 
 export default function RobotScene() {
@@ -14,7 +14,9 @@ export default function RobotScene() {
             <Environment preset="city" />
             <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
                 <Suspense fallback={null}>
-                    <RobotModel />
+                    <Center>
+                        <RobotModel />
+                    </Center>
                 </Suspense>
             </Float>
             <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} enablePan={false} />
