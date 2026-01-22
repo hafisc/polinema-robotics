@@ -34,5 +34,5 @@ export default function RobotModel() {
         }
     });
 
-    return <primitive object={obj} ref={modelRef} scale={0.02} />;
+    return <primitive object={obj} ref={modelRef} />;
 }
