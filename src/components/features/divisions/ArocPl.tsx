@@ -9,49 +9,25 @@ import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export default function Aburobonema() {
-    const team = teams.find((t) => t.id === 'aburobonema');
+export default function ArocPl() {
+    const team = teams.find((t) => t.id === 'aroc-pl');
 
     if (!team) {
         return <div>Team not found</div>;
     }
 
     const achievements = [
-        { year: "2024", title: "Juara Harapan", level: "Regional 2" },
-        { year: "2023", title: "Juara 2", level: "Nasional" },
-        { year: "2023", title: "Juara 2", level: "Regional 2" },
-        { year: "2022", title: "Juara Harapan", level: "Nasional" },
-        { year: "2022", title: "Juara 3", level: "Regional 2" },
-        { year: "2021", title: "Juara 3", level: "Nasional" },
-        { year: "2021", title: "Juara Harapan", level: "Regional 2" },
-        { year: "2020", title: "Juara Harapan", level: "Nasional" },
+        { year: "2024", title: "Partisipasi", level: "Nasional" },
+        { year: "2023", title: "Finalis", level: "Regional 2" },
     ];
 
     // Mock Data for Team Members
-    const teamMembers = [
-        { name: "Mochamad Widdad El Aufany", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Moh. Rif'at Nur Fahri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Muhammad Alif Nugroho", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Muhammad Orri' Syahputra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Zahrina Rana Nadhila", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Putri Wahyu Ilahi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Syahrul Fauzi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Husnil Al Fajri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Nizam Agatha Lukito Putra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Bintang Yoga Samiaji", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Tjipto Aria Bima", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Ananda Vito Nur Islam", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Handi Riswanto", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Siti Nikmatus Sholihah", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Reny Ambarwati", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Mohammad Al Hafis Hidayatulloh", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Naufal Faqih Ramadhan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Muhammad Fitroh Amin", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "M Ergiansyah S", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "M. Baharudin Fajar Ramadan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Faqih Azhar Fathurrochman", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Moh. Nafis Ali Fahri", role: "Anggota ABUROBONEMA", image: "", socials: { linkedin: "#" } },
-        { name: "Imam Mustaqim", role: "Anggota ABUROBONEMA", image: "", socials: { github: "#", instagram: "#" } },
+    const teamMembers: { name: string; role: string; image: string; socials: { github?: string; linkedin?: string; instagram?: string } }[] = [
+        { name: "Nama Anggota 1", role: "Ketua Tim AROC-PL", image: "", socials: {} },
+        { name: "Nama Anggota 2", role: "Mekanik Humanoid", image: "", socials: {} },
+        { name: "Nama Anggota 3", role: "Programmer Vision", image: "", socials: {} },
+        { name: "Nama Anggota 4", role: "Elektronika", image: "", socials: {} },
+
     ];
 
     const containerVariants = {
@@ -221,7 +197,7 @@ export default function Aburobonema() {
                                             <User className="w-10 h-10 text-cyan-200" />
                                         </div>
                                         <h3 className="text-xl font-bold text-white mb-1">{teamMembers[0].name}</h3>
-                                        <p className="text-cyan-400 font-mono text-sm uppercase tracking-wider">Ketua ABUROBONEMA</p>
+                                        <p className="text-cyan-400 font-mono text-sm uppercase tracking-wider">Ketua AROC-PL</p>
                                     </div>
                                     {/* Vertical connector line from leader */}
                                     <div className="absolute -bottom-8 left-1/2 w-0.5 h-8 bg-slate-600 -translate-x-1/2" />
@@ -277,7 +253,7 @@ export default function Aburobonema() {
                             </motion.h2>
                             <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50">
                                 <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                                    Tim <strong>{team.name}</strong> mendedikasikan diri untuk mendorong batas kemampuan robotika. Kami menggabungkan <em>engineering</em> presisi dengan algoritma cerdas untuk menciptakan robot yang adaptif dan tangguh.
+                                    Tim <strong>{team.name}</strong> ({team.category}) berfokus pada pengembangan robot humanoid yang mampu meniru gerakan manusia, menjaga keseimbangan dinamis, dan berinteraksi dengan lingkungan secara otonom.
                                 </p>
                                 <motion.ul
                                     variants={containerVariants}
@@ -286,7 +262,7 @@ export default function Aburobonema() {
                                     viewport={{ once: true, margin: "-50px" }}
                                     className="grid grid-cols-1 md:grid-cols-2 gap-4"
                                 >
-                                    {['Mekanik Presisi CAD/CAM', 'Sistem Kontrol PID & Fuzzy', 'Computer Vision AI', 'Mikrokontroler STM32/ESP32'].map((item, i) => (
+                                    {['Kinematika & Dinamika Gerak', 'Computer Vision & Object Tracking', 'Sistem Keseimbangan (IMU/Gyro)', 'Kecerdasan Buatan (AI)'].map((item, i) => (
                                         <motion.li
                                             key={i}
                                             variants={itemVariants}
