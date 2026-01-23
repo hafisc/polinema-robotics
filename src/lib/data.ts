@@ -53,14 +53,6 @@ export const teams: Team[] = [
         color: "from-amber-500 to-orange-600",
     },
     {
-        id: "rotama",
-        name: "ROTAMA",
-        description: "Tim Robot Tari (KRSTI). Menggabungkan seni budaya dan teknologi robotika dalam gerakan tari yang sinkron.",
-        category: "KRSTI",
-        image: "/images/teams/rotama.jpg",
-        color: "from-violet-500 to-purple-600",
-    },
-    {
         id: "robosarema",
         name: "ROBOSAREMA",
         description: "Tim Robot SAR (KRSRI). Robot otonom berkaki yang dirancang untuk misi penyelamatan di medan bencana.",

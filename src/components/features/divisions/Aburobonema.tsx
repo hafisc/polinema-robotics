@@ -26,14 +26,30 @@ export default function Aburobonema() {
         { year: "2020", title: "Juara Harapan", level: "Nasional" },
     ];
 
-    // Mock Data for Team Members
     const teamMembers = [
-        { name: "Rafli Ramadhan", role: "Ketua Tim", image: "", socials: { instagram: "#", linkedin: "#" } },
-        { name: "Sarah Putri", role: "Divisi Mekanik", image: "", socials: { instagram: "#", github: "#" } },
-        { name: "Dimas Adit", role: "Divisi Elektronik", image: "", socials: { linkedin: "#" } },
-        { name: "Rizky Fajar", role: "Divisi Programmer", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Nadia Utami", role: "Divisi Mekanik", image: "", socials: { instagram: "#" } },
-        { name: "Budi Santoso", role: "Divisi Elektronik", image: "", socials: { linkedin: "#" } },
+        { name: "MOCHAMAD WIDDAD EL AUFANY", role: "Ketua Tim", image: "", socials: { instagram: "#", linkedin: "#" } },
+        { name: "ANANDA VITO NUR ISLAM", role: "Divisi Elektrik", image: "", socials: { instagram: "#", github: "#" } },
+        { name: "BINTANG YOGA SAMIAJI ", role: "Divisi Elektrik", image: "", socials: { linkedin: "#" } },
+        { name: "FAQIH AZHAR FATHURROCHMAN", role: "Divisi Mekanik", image: "", socials: { github: "#", linkedin: "#" } },
+        { name: "HANDI RISWANTO", role: "Divisi Elektrik", image: "", socials: { instagram: "#" } },
+        { name: "HUSNIL AL FAJRI", role: "Divisi Mekanik", image: "", socials: { linkedin: "#" } },
+        { name: "IMAM MUSTAQIM", role: "Divisi Elektrik", image: "", socials: { instagram: "#", linkedin: "#" } },
+        { name: "BAHARUDIN FAJAR RAMADAN", role: "Divisi Elektrik", image: "", socials: { instagram: "#", github: "#" } },
+        { name: "M ERGIANSYAH S", role: "Divisi Mekanik", image: "", socials: { linkedin: "#" } },
+        { name: "MOH. NAFIS ALI FAHRI", role: " ", image: "", socials: { github: "#", linkedin: "#" } },
+        { name: "MOH. RIF'AT NUR FAHRI", role: "Divisi Software", image: "", socials: { instagram: "#" } },
+        { name: "MOHAMMAD AL HAFIS HIDAYATULLOH", role: "Divisi Software", image: "", socials: { linkedin: "#" } },
+        { name: "MUHAMMAD ALIF NUGROHO", role: "Divisi Mekanik", image: "", socials: { instagram: "#", linkedin: "#" } },
+        { name: "MUHAMMAD FITROH AMIN", role: "Divisi Mekanik", image: "", socials: { instagram: "#", github: "#" } },
+        { name: "MUHAMMAD ORRI SYAHPUTRA", role: "Divisi Elektrik", image: "", socials: { linkedin: "#" } },
+        { name: "NAUFAL FAQIH RAMADHAN", role: "Divisi Mekanik", image: "", socials: { github: "#", linkedin: "#" } },
+        { name: "NIZAM AGATHA LUKITO PUTRA", role: "Divisi Manager", image: "", socials: { instagram: "#" } },
+        { name: "PUTRI WAHYU ILAHI", role: "Divisi Manager", image: "", socials: { linkedin: "#" } },
+        { name: "RENY AMBARWATI", role: "Divisi Software", image: "", socials: { linkedin: "#" } },
+        { name: "SITI NIKMATUS SHOLIHAH", role: "Divisi Manager", image: "", socials: { instagram: "#", linkedin: "#" } },
+        { name: "SYAHRUL FAUZI", role: "Divisi Software", image: "", socials: { instagram: "#", github: "#" } },
+        { name: "TJIPTO ARIA BIMA", role: "Divisi Software", image: "", socials: { linkedin: "#" } },
+        { name: "ZAHRINA RANA NAHDILA", role: "Divisi Manager", image: "", socials: { github: "#", linkedin: "#" } },
     ];
 
     const containerVariants = {
@@ -122,7 +138,7 @@ export default function Aburobonema() {
                                 </motion.h2>
                                 <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50">
                                     <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                                        Tim <strong>{team.name}</strong> mendedikasikan diri untuk mendorong batas kemampuan robotika. Kami menggabungkan <em>engineering</em> presisi dengan algoritma cerdas untuk menciptakan robot yang adaptif dan tangguh.
+                                        Tim <strong>{team.name}</strong> merupakan salah satu tim robotik Politeknik Negeri Malang yang fokus pada ajang KRI (Kontes Robot Indonesia) untuk divisi KRAI (Kontes Robot ABU Indonesia). Tema perlombaan KRAI setiap tahunnya berbeda, mengacu pada ABU Robocon (Asia-Pacific Broadcasting Union Robot Contest) yang mana pada tahun ini memiliki tema "Robot Basketball". Tim Aburobonema telah meraih 8 juara selama 5 tahun berturut-urut. Aburobonema memiliki tiga divisi yaitu
                                     </p>
                                     <motion.ul
                                         variants={containerVariants}
