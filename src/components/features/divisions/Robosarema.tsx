@@ -17,23 +17,26 @@ export default function Robosarema() {
 
     const achievements = [
         { year: "2024", title: "Juara Harapan", level: "Regional 2" },
-        { year: "2023", title: "Juara 2", level: "Nasional" },
-        { year: "2023", title: "Juara 2", level: "Regional 2" },
-        { year: "2022", title: "Juara Harapan", level: "Nasional" },
-        { year: "2022", title: "Juara 3", level: "Regional 2" },
-        { year: "2021", title: "Juara 3", level: "Nasional" },
-        { year: "2021", title: "Juara Harapan", level: "Regional 2" },
-        { year: "2020", title: "Juara Harapan", level: "Nasional" },
+        
     ];
 
-    // Mock Data for Team Members
+    // Mock Data for Team Members - Divisi Software
     const teamMembers = [
-        { name: "Aditya Pratama", role: "Ketua Tim", image: "", socials: { instagram: "#", linkedin: "#" } },
-        { name: "Maya Indah", role: "Divisi Mekanik", image: "", socials: { instagram: "#", github: "#" } },
-        { name: "Reza Kurniawan", role: "Divisi Elektronik", image: "", socials: { linkedin: "#" } },
-        { name: "Sinta Dewi", role: "Divisi Programmer", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Bayu Saputra", role: "Divisi Mekanik", image: "", socials: { instagram: "#" } },
-        { name: "Dewi Lestari", role: "Divisi Elektronik", image: "", socials: { linkedin: "#" } },
+        { name: "Eric Agus Kurniawan Jauhari", role: "Ketua tim", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Faqih Rizaludin", role: "Divisi Elektrik", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Saidun Fiddaroini", role: "Divisi Software", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "M Faris Asroru Ghifary", role: "Manager", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Gaduh Prakoso", role: "Divisi Software", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Dwi Angga Pramana Achmaddillah", role: "Divisi Mekanik", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Dewi Chalissa Rania", role: "Divisi Software", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Hanik Kamila", role: "Manager", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Bisma Adhiaksa", role: "Divisi Software", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Ferdian Irawan Syahputra", role: "Divisi Elektrik", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Yoggy Pratama", role: "Divisi Software", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Nuzulmi Oktafianto R.", role: "Divisi Elektrik", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Muhammad Rafif Erdiansya", role: "Divisi Software", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Ilham Ramadhan", role: "Divisi Software", image: "", socials: {github: "#", linkedin: "#"} },
+        { name: "Wilhelmus Zakharia Bimantara", role: "Divisi Software", image: "", socials: {github: "#", linkedin: "#", instagram: "#"} },
     ];
 
     const containerVariants = {
@@ -107,9 +110,7 @@ export default function Robosarema() {
 
 
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                        {/* Main Content Area */}
-                        <div className="lg:col-span-2 space-y-12">
+                    <div className="space-y-12">
                             <section>
                                 <motion.h2
                                     initial={{ opacity: 0, x: -20 }}
@@ -202,7 +203,7 @@ export default function Robosarema() {
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true, margin: "-50px" }}
-                                    className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                                    className="grid grid-cols-1 md:grid-cols-3 gap-6"
                                 >
                                     {teamMembers.map((member, index) => (
                                         <motion.div
@@ -299,32 +300,15 @@ export default function Robosarema() {
                             </section>
                         </div>
 
-                        {/* Sidebar Visual */}
-                        <div className="lg:col-span-1">
-                            <div className="sticky top-32 space-y-8">
-                                <div className="aspect-[3/4] rounded-3xl overflow-hidden relative border border-slate-800 group shadow-2xl shadow-cyan-900/20">
-                                    <Image
-                                        src={team.image}
-                                        alt={team.name}
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
-                                    <div className="absolute bottom-0 left-0 p-8 w-full">
-                                        <p className="text-slate-400 text-sm uppercase tracking-widest mb-1">Maskot Tim</p>
-                                        <h3 className="text-3xl font-bold text-white font-mr-robot">ROBOSAREMA</h3>
-                                    </div>
-                                </div>
-
-                                <Link href="/#divisions" className="block p-4 rounded-xl bg-slate-800 text-center text-slate-300 hover:bg-slate-700 hover:text-white transition-colors">
-                                    <span className="flex items-center justify-center gap-2">
-                                        <ArrowLeft className="w-4 h-4" />
-                                        Kembali ke Beranda
-                                    </span>
-                                </Link>
-                            </div>
+                        {/* Back to Home Button */}
+                        <div className="mt-16 mb-12">
+                            <Link href="/#divisions" className="block p-4 rounded-xl bg-slate-800 text-center text-slate-300 hover:bg-slate-700 hover:text-white transition-colors">
+                                <span className="flex items-center justify-center gap-2">
+                                    <ArrowLeft className="w-4 h-4" />
+                                    Kembali ke Beranda
+                                </span>
+                            </Link>
                         </div>
-                    </div>
                 </div>
             </div>
 

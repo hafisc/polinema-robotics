@@ -36,7 +36,7 @@ export default function DivisionGrid() {
                             }
                         }
                     }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 auto-rows-[300px]"
+                    className="grid grid-cols-2 gap-6 auto-rows-[300px]"
                 >
                     {teams.map((team) => (
                         <motion.div
@@ -56,8 +56,7 @@ export default function DivisionGrid() {
                                 }
                             }}
                             className={cn(
-                                "group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 p-0 flex flex-col justify-between hover:border-slate-700 transition-colors bg-grid-slate-800/50",
-                                "lg:col-span-2"
+                                "group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 p-0 flex flex-col justify-between hover:border-slate-700 transition-colors bg-grid-slate-800/50"
                             )}
                         >
                             <Link href={`/divisions/${team.id}`} className="block w-full h-full p-6 flex flex-col justify-between">

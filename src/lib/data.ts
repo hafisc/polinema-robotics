@@ -52,14 +52,7 @@ export const teams: Team[] = [
         image: "/images/teams/botema.jpg",
         color: "from-amber-500 to-orange-600",
     },
-    {
-        id: "rotama",
-        name: "ROTAMA",
-        description: "Tim Robot Tari (KRSTI). Menggabungkan seni budaya dan teknologi robotika dalam gerakan tari yang sinkron.",
-        category: "KRSTI",
-        image: "/images/teams/rotama.jpg",
-        color: "from-violet-500 to-purple-600",
-    },
+    
     {
         id: "robosarema",
         name: "ROBOSAREMA",
@@ -119,14 +112,15 @@ export const members: Member[] = [
     {
         id: "m3",
         name: "user 3",
-        role: "Dosen Pembimbing ROBSONEMA",
+        role: "Dosen Pembimbing ROBOSAREMA",
         image: "",
         socials: { github: "#" },
     },
+    
     {
-        id: "m4",
-        name: "user 4",
-        role: "Dosen Pembimbing ROTAMA",
+        id: "m5",
+        name: "user 5",
+        role: "Dosen Pembimbing BOTEMA",
         image: "",
         socials: { instagram: "#" },
     },

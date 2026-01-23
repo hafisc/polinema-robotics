@@ -30,7 +30,9 @@ export default function Footer() {
                                 <Instagram className="w-5 h-5" />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/company/polinema-robotics/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-500 hover:text-slate-950 hover:border-cyan-500 transition-all"
                             >
                                 <Linkedin className="w-5 h-5" />

@@ -28,12 +28,29 @@ export default function Aburobonema() {
 
     // Mock Data for Team Members
     const teamMembers = [
-        { name: "Rafli Ramadhan", role: "Ketua Tim", image: "", socials: { instagram: "#", linkedin: "#" } },
-        { name: "Sarah Putri", role: "Divisi Mekanik", image: "", socials: { instagram: "#", github: "#" } },
-        { name: "Dimas Adit", role: "Divisi Elektronik", image: "", socials: { linkedin: "#" } },
-        { name: "Rizky Fajar", role: "Divisi Programmer", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Nadia Utami", role: "Divisi Mekanik", image: "", socials: { instagram: "#" } },
-        { name: "Budi Santoso", role: "Divisi Elektronik", image: "", socials: { linkedin: "#" } },
+        { name: "Mochamad Widdad El Aufany", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Moh. Rif'at Nur Fahri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Muhammad Alif Nugroho", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Muhammad Orri' Syahputra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Zahrina Rana Nadhila", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Putri Wahyu Ilahi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Syahrul Fauzi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Husnil Al Fajri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Nizam Agatha Lukito Putra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Bintang Yoga Samiaji", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Tjipto Aria Bima", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Ananda Vito Nur Islam", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Handi Riswanto", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Siti Nikmatus Sholihah", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Reny Ambarwati", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Mohammad Al Hafis Hidayatulloh", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Naufal Faqih Ramadhan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Muhammad Fitroh Amin", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "M Ergiansyah S", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "M. Baharudin Fajar Ramadan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Faqih Azhar Fathurrochman", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Moh. Nafis Ali Fahri", role: "Anggota ABUROBONEMA", image: "", socials: {linkedin: "#"} },
+        { name: "Imam Mustaqim", role: "Anggota ABUROBONEMA", image: "", socials: {github: "#", instagram: "#"} },
     ];
 
     const containerVariants = {
@@ -107,9 +124,7 @@ export default function Aburobonema() {
 
 
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                        {/* Main Content Area */}
-                        <div className="lg:col-span-2 space-y-12">
+                    <div className="space-y-12">
                             <section>
                                 <motion.h2
                                     initial={{ opacity: 0, x: -20 }}
@@ -202,7 +217,7 @@ export default function Aburobonema() {
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true, margin: "-50px" }}
-                                    className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                                    className="grid grid-cols-1 sm:grid-cols-3 gap-6"
                                 >
                                     {teamMembers.map((member, index) => (
                                         <motion.div
@@ -299,32 +314,15 @@ export default function Aburobonema() {
                             </section>
                         </div>
 
-                        {/* Sidebar Visual */}
-                        <div className="lg:col-span-1">
-                            <div className="sticky top-32 space-y-8">
-                                <div className="aspect-[3/4] rounded-3xl overflow-hidden relative border border-slate-800 group shadow-2xl shadow-cyan-900/20">
-                                    <Image
-                                        src={team.image}
-                                        alt={team.name}
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
-                                    <div className="absolute bottom-0 left-0 p-8 w-full">
-                                        <p className="text-slate-400 text-sm uppercase tracking-widest mb-1">Maskot Tim</p>
-                                        <h3 className="text-3xl font-bold text-white font-mr-robot">ABUROBOT</h3>
-                                    </div>
-                                </div>
-
-                                <Link href="/#divisions" className="block p-4 rounded-xl bg-slate-800 text-center text-slate-300 hover:bg-slate-700 hover:text-white transition-colors">
-                                    <span className="flex items-center justify-center gap-2">
-                                        <ArrowLeft className="w-4 h-4" />
-                                        Kembali ke Beranda
-                                    </span>
-                                </Link>
-                            </div>
+                        {/* Back to Home Button - Moved Before Footer */}
+                        <div className="mt-16 mb-12">
+                            <Link href="/#divisions" className="block p-4 rounded-xl bg-slate-800 text-center text-slate-300 hover:bg-slate-700 hover:text-white transition-colors">
+                                <span className="flex items-center justify-center gap-2">
+                                    <ArrowLeft className="w-4 h-4" />
+                                    Kembali ke Beranda
+                                </span>
+                            </Link>
                         </div>
-                    </div>
                 </div>
             </div>
 
