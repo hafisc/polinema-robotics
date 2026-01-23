@@ -127,11 +127,11 @@ export const members: Member[] = [
 ];
 
 export const galleryImages = [
-    "/images/gallery/UMS_2163.jpg",
-    "/images/gallery/UMS_2171.jpg",
-    "/images/gallery/UMS_2255.jpg",
-    "/images/gallery/UMS_2977.jpg",
-    "/images/gallery/UMS_3022.jpg",
+    "/images/gallery/1.JPG",
+    "/images/gallery/2.JPG",
+    "/images/gallery/3.JPG",
+    "/images/gallery/aroc.jpg",
+    "/images/gallery/aroc1.jpg",
     "/images/gallery/UMS_3556.jpg",
     "/images/gallery/WEB_6506.JPG",
 ];
