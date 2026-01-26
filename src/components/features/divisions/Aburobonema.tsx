@@ -1,12 +1,13 @@
 'use client';
 
 import { teams, galleryImages } from "@/lib/data";
-import { ArrowLeft, Trophy, Star, Medal, Github, Linkedin, Instagram, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, Trophy, Star, Medal, Github, Linkedin, Instagram, User, Maximize2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export default function Aburobonema() {
     const team = teams.find((t) => t.id === 'aburobonema');
@@ -26,31 +27,30 @@ export default function Aburobonema() {
         { year: "2020", title: "Juara Harapan", level: "Nasional" },
     ];
 
-    // Mock Data for Team Members
     const teamMembers = [
-        { name: "Mochamad Widdad El Aufany", role: "Ketua Tim", image: "", socials: {} },
-        { name: "Moh. Rif'at Nur Fahri", role: "Divisi Software", image: "", socials: {} },
-        { name: "Muhammad Alif Nugroho", role: "Divisi Mekanik", image: "", socials: {} },
-        { name: "Muhammad Orri' Syahputra", role: "Divisi Elektrik", image: "", socials: {} },
-        { name: "Zahrina Rana Nadhila", role: "Divisi Manager", image: "", socials: {} },
-        { name: "Putri Wahyu Ilahi", role: "Divisi Manager", image: "", socials: {} },
-        { name: "Syahrul Fauzi", role: "Divisi Software", image: "", socials: {} },
-        { name: "Husnil Al Fajri", role: "Divisi Mekanik", image: "", socials: {} },
-        { name: "Nizam Agatha Lukito Putra", role: "Divisi Manager", image: "", socials: {} },
-        { name: "Bintang Yoga Samiaji", role: "Divisi Elektrik", image: "", socials: {} },
-        { name: "Tjipto Aria Bima", role: "Divisi Software", image: "", socials: {} },
-        { name: "Ananda Vito Nur Islam", role: "Divisi Elektrik", image: "", socials: {} },
-        { name: "Handi Riswanto", role: "Divisi Elektrik", image: "", socials: {} },
-        { name: "Siti Nikmatus Sholihah", role: "Divisi Manager", image: "", socials: {} },
-        { name: "Reny Ambarwati", role: "Divisi Software", image: "", socials: {} },
-        { name: "Mohammad Al Hafis Hidayatulloh", role: "Divisi Software", image: "", socials: {} },
-        { name: "Naufal Faqih Ramadhan", role: "Divisi Mekanik", image: "", socials: {} },
-        { name: "Muhammad Fitroh Amin", role: "Divisi Mekanik", image: "", socials: {} },
-        { name: "M Ergiansyah S", role: "Divisi Mekanik", image: "", socials: {} },
-        { name: "M. Baharudin Fajar Ramadan", role: "Divisi Elektrik", image: "", socials: {} },
-        { name: "Faqih Azhar Fathurrochman", role: "Divisii Mekanik", image: "", socials: {} },
-        { name: "Moh. Nafis Ali Fahri", role: "Divisi Software", image: "", socials: { linkedin: "#" } },
-        { name: "Imam Mustaqim", role: "Divisi Elektrik", image: "", socials: { github: "#", instagram: "#" } },
+        { name: "Mochamad Widdad El Aufany", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Moh. Rif'at Nur Fahri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Muhammad Alif Nugroho", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Muhammad Orri' Syahputra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Zahrina Rana Nadhila", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Putri Wahyu Ilahi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Syahrul Fauzi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Husnil Al Fajri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Nizam Agatha Lukito Putra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Bintang Yoga Samiaji", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Tjipto Aria Bima", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Ananda Vito Nur Islam", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Handi Riswanto", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Siti Nikmatus Sholihah", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Reny Ambarwati", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Mohammad Al Hafis Hidayatulloh", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Naufal Faqih Ramadhan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Muhammad Fitroh Amin", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "M Ergiansyah S", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "M. Baharudin Fajar Ramadan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Faqih Azhar Fathurrochman", role: "Anggota ABUROBONEMA", image: "", socials: {} },
+        { name: "Moh. Nafis Ali Fahri", role: "Anggota ABUROBONEMA", image: "", socials: { linkedin: "#" } },
+        { name: "Imam Mustaqim", role: "Anggota ABUROBONEMA", image: "", socials: { github: "#", instagram: "#" } },
     ];
 
     const containerVariants = {
@@ -82,9 +82,7 @@ export default function Aburobonema() {
             <Navbar />
 
             <div className="flex-grow">
-                {/* Hero Section Immersive */}
                 <div className="relative min-h-[60vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
-                    {/* Background Image with Overlay */}
                     <div className="absolute inset-0 z-0">
                         <Image
                             src={team.image}
@@ -98,8 +96,6 @@ export default function Aburobonema() {
                     </div>
 
                     <div className="container mx-auto px-4 relative z-10 pt-20 text-center">
-
-
                         <motion.h1
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -121,10 +117,138 @@ export default function Aburobonema() {
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10 -mt-20 pb-24">
-
-
-
                     <div className="space-y-12">
+                        {/* Section: Prestasi Tim */}
+                        <section>
+                            <motion.h2
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="text-3xl font-bold text-white mb-6 flex items-center gap-3"
+                            >
+                                <span className="w-10 h-1 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full" />
+                                Prestasi Tim
+                            </motion.h2>
+
+                            <motion.div
+                                variants={containerVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-50px" }}
+                                className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                            >
+                                {achievements.map((ach, index) => (
+                                    <motion.div
+                                        key={index}
+                                        variants={itemVariants}
+                                        className="relative group p-6 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-slate-600/50 transition-all hover:bg-slate-900/60 overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity">
+                                            <Trophy className="w-24 h-24 text-white transform rotate-12" />
+                                        </div>
+
+                                        <div className="relative z-10 flex items-start justify-between gap-4">
+                                            <div>
+                                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-slate-300 text-sm font-mono mb-3 group-hover:border-slate-500/50 transition-colors">
+                                                    <span className="font-semibold text-white">{ach.year}</span>
+                                                    <span className="w-1 h-1 rounded-full bg-slate-500" />
+                                                    <span className="text-slate-400">{ach.level}</span>
+                                                </div>
+                                                <h4 className="text-xl font-bold text-slate-200 mb-2 group-hover:text-white transition-colors">
+                                                    {ach.title}
+                                                </h4>
+                                                <div className="flex items-center gap-1">
+                                                    {ach.title.toLowerCase().includes('juara') ? (
+                                                        <>
+                                                            {[...Array(ach.title.includes('1') ? 3 : ach.title.includes('2') ? 2 : 1)].map((_, i) => (
+                                                                <Star key={i} className="w-4 h-4 text-amber-500 fill-amber-500" />
+                                                            ))}
+                                                            <span className="text-xs text-amber-500/80 ml-2 font-mono uppercase tracking-wider">Achievement</span>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <Medal className="w-4 h-4 text-slate-500" />
+                                                            <span className="text-xs text-slate-500 ml-2 font-mono uppercase tracking-wider">Participation</span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-800/50 flex items-center justify-center border border-slate-700 group-hover:border-amber-500/30 transition-colors">
+                                                {ach.title.toLowerCase().includes('juara') ? (
+                                                    <Trophy className="w-5 h-5 text-amber-500/70 group-hover:text-amber-400 transition-colors" />
+                                                ) : (
+                                                    <Medal className="w-5 h-5 text-slate-500 group-hover:text-slate-400 transition-colors" />
+                                                )}
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        </section>
+
+                        {/* Section: Struktur Tim */}
+                        <section className="py-8">
+                            <motion.h2
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="text-3xl font-bold text-white mb-12 flex items-center gap-3"
+                            >
+                                <span className="w-10 h-1 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full" />
+                                Struktur Tim
+                            </motion.h2>
+
+                            <div className="relative flex flex-col items-center">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    className="relative z-10 mb-8 w-full max-w-sm"
+                                >
+                                    <div className="bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.1)] text-center relative overflow-hidden group">
+                                        <div className="absolute top-0 left-0 w-full h-1 bg-cyan-500" />
+                                        <div className="w-24 h-24 mx-auto rounded-full bg-slate-700 border-2 border-cyan-400 flex items-center justify-center mb-4 overflow-hidden shadow-lg">
+                                            <User className="w-10 h-10 text-cyan-200" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-1">{teamMembers[0].name}</h3>
+                                        <p className="text-cyan-400 font-mono text-sm uppercase tracking-wider">Ketua ABUROBONEMA</p>
+                                    </div>
+                                    <div className="absolute -bottom-8 left-1/2 w-0.5 h-8 bg-slate-600 -translate-x-1/2" />
+                                </motion.div>
+
+                                <div className="w-4 h-4 rounded-full bg-slate-600 border-2 border-slate-900 absolute top-[13.5rem] z-20" />
+                                <div className="w-[85%] h-0.5 bg-slate-600 mb-8 relative"></div>
+
+                                <motion.div
+                                    variants={containerVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full relative"
+                                >
+                                    {teamMembers.slice(1).map((member, index) => (
+                                        <motion.div
+                                            key={index}
+                                            variants={itemVariants}
+                                            className="relative group bg-slate-900/50 rounded-xl p-4 border border-slate-800 hover:border-slate-600 transition-all flex items-center gap-4 before:content-[''] before:absolute before:-top-8 before:left-1/2 before:w-0.5 before:h-8 before:bg-slate-700 before:-translate-x-1/2 before:hidden sm:before:block"
+                                        >
+                                            <div className="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center flex-shrink-0">
+                                                <User className="w-6 h-6 text-slate-500" />
+                                            </div>
+                                            <div>
+                                                <h4 className="text-white font-bold text-sm group-hover:text-cyan-400 transition-colors line-clamp-1">
+                                                    {member.name}
+                                                </h4>
+                                                <p className="text-slate-400 text-xs font-mono">{member.role}</p>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </motion.div>
+                            </div>
+                        </section>
+
+                        {/* Section: Fokus Pengembangan */}
                         <section>
                             <motion.h2
                                 initial={{ opacity: 0, x: -20 }}
@@ -137,7 +261,7 @@ export default function Aburobonema() {
                             </motion.h2>
                             <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50">
                                 <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                                    Tim <strong>{team.name}</strong> salah satu tim robotik Politeknik Negeri Malang yang fokus pada ajang KRI (Kontes Robot Indonesia) untuk divisi KRAI (Kontes Robot ABU Indonesia). Tema perlombaan KRAI setiap tahunnya berbeda, mengacu pada ABU Robocon (Asia-Pacific Broadcasting Union Robot Contest) yang mana pada tahun ini memiliki tema "Robot Basketball". Tim Aburobonema telah meraih 8 juara selama 5 tahun berturut-urut. Aburobonema memiliki tiga divisi yaitu: 
+                                    Tim <strong>{team.name}</strong> mendedikasikan diri untuk mendorong batas kemampuan robotika. Kami menggabungkan <em>engineering</em> presisi dengan algoritma cerdas untuk menciptakan robot yang adaptif dan tangguh.
                                 </p>
                                 <motion.ul
                                     variants={containerVariants}
@@ -146,7 +270,7 @@ export default function Aburobonema() {
                                     viewport={{ once: true, margin: "-50px" }}
                                     className="grid grid-cols-1 md:grid-cols-2 gap-4"
                                 >
-                                    {['Divisi Mekanik', 'Divisi Software', 'Divisi Elektrik', 'Divisi Manager'].map((item, i) => (
+                                    {['Mekanik Presisi CAD/CAM', 'Sistem Kontrol PID & Fuzzy', 'Computer Vision AI', 'Mikrokontroler STM32/ESP32'].map((item, i) => (
                                         <motion.li
                                             key={i}
                                             variants={itemVariants}
@@ -160,161 +284,82 @@ export default function Aburobonema() {
                             </div>
                         </section>
 
-                        <section>
-                            <motion.h2
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="text-3xl font-bold text-white mb-6 flex items-center gap-3"
-                            >
-                                <span className="w-10 h-1 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full" />
-                                Hall of Fame
-                            </motion.h2>
-
-                            <motion.div
-                                variants={containerVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-50px" }}
-                                className="space-y-4"
-                            >
-                                {achievements.map((ach, index) => (
-                                    <motion.div
-                                        key={index}
-                                        variants={itemVariants}
-                                        className="group flex items-center p-4 rounded-2xl bg-slate-900/30 border border-slate-800 hover:bg-slate-800/50 hover:border-slate-700 transition-all cursor-default"
-                                    >
-                                        <div className="w-16 font-mono text-slate-500 font-bold text-xl group-hover:text-cyan-400 transition-colors">{ach.year}</div>
-                                        <div className="flex-grow">
-                                            <h4 className="text-white font-bold text-lg group-hover:text-amber-400 transition-colors flex items-center gap-2">
-                                                {ach.title}
-                                                {ach.title.includes('1') || ach.title.includes('Juara 2') || ach.title.includes('Juara 3') ? <Medal className="w-4 h-4 text-amber-500" /> : <Star className="w-4 h-4 text-slate-600 group-hover:text-amber-400" />}
-                                            </h4>
-                                            <p className="text-slate-400 text-sm">Tingkat {ach.level}</p>
-                                        </div>
-                                        <div className="opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-4 group-hover:translate-x-0">
-                                            <Trophy className="w-5 h-5 text-amber-500" />
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </motion.div>
-                        </section>
-
-                        {/* Section: Anggota Tim */}
-                        <section>
-                            <motion.h2
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="text-3xl font-bold text-white mb-8 flex items-center gap-3"
-                            >
-                                <span className="w-10 h-1 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full" />
-                                Anggota Tim
-                            </motion.h2>
-
-                            <motion.div
-                                variants={containerVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-50px" }}
-                                className="grid grid-cols-1 sm:grid-cols-3 gap-6"
-                            >
-                                {teamMembers.map((member, index) => (
-                                    <motion.div
-                                        key={index}
-                                        variants={itemVariants}
-                                        className="group relative bg-slate-900/50 rounded-2xl p-5 border border-slate-800 hover:border-cyan-500/50 transition-all hover:-translate-y-1"
-                                    >
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-16 h-16 rounded-full bg-slate-800 border mr-1 border-slate-700 flex items-center justify-center overflow-hidden group-hover:border-cyan-500 transition-colors">
-                                                {member.image ? (
-                                                    <Image
-                                                        src={member.image}
-                                                        alt={member.name}
-                                                        width={64}
-                                                        height={64}
-                                                        className="object-cover w-full h-full"
-                                                    />
-                                                ) : (
-                                                    <User className="w-8 h-8 text-slate-500" />
-                                                )}
-                                            </div>
-                                            <div>
-                                                <h4 className="text-white font-bold text-lg group-hover:text-cyan-400 transition-colors">
-                                                    {member.name}
-                                                </h4>
-                                                <p className="text-slate-400 text-sm font-mono">{member.role}</p>
-                                            </div>
-                                        </div>
-
-                                        {/* Social Links Overlay */}
-                                        <div className="absolute top-5 right-5 flex gap-2">
-                                            {member.socials.github && (
-                                                <Link href={member.socials.github} className="text-slate-600 hover:text-white transition-colors">
-                                                    <Github className="w-4 h-4" />
-                                                </Link>
-                                            )}
-                                            {member.socials.linkedin && (
-                                                <Link href={member.socials.linkedin} className="text-slate-600 hover:text-white transition-colors">
-                                                    <Linkedin className="w-4 h-4" />
-                                                </Link>
-                                            )}
-                                            {member.socials.instagram && (
-                                                <Link href={member.socials.instagram} className="text-slate-600 hover:text-white transition-colors">
-                                                    <Instagram className="w-4 h-4" />
-                                                </Link>
-                                            )}
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </motion.div>
-                        </section>
-
                         {/* Section: Galeri Kegiatan */}
-                        <section>
-                            <motion.h2
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="text-3xl font-bold text-white mb-8 flex items-center gap-3"
-                            >
-                                <span className="w-10 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full" />
-                                Galeri Kegiatan
-                            </motion.h2>
+                        <section className="relative">
+                            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                                <div>
+                                    <motion.h2
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        className="text-3xl font-bold text-white mb-2 flex items-center gap-3"
+                                    >
+                                        <span className="w-10 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full" />
+                                        Galeri Kegiatan
+                                    </motion.h2>
+                                    <p className="text-slate-400 max-w-lg">
+                                        Intip keseruan dan semangat juang tim kami di balik layar maupun saat kompetisi.
+                                    </p>
+                                </div>
+
+                                <motion.div
+                                    initial={{ opacity: 0, x: 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <Link href="/gallery" className="hidden md:inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-medium group">
+                                        Lihat Semua Galeri
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    </Link>
+                                </motion.div>
+                            </div>
 
                             <motion.div
                                 variants={containerVariants}
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true, margin: "-50px" }}
-                                className="grid grid-cols-2 md:grid-cols-3 gap-4"
+                                className="grid grid-cols-2 md:grid-cols-4 gap-4"
                             >
-                                {galleryImages.slice(0, 6).map((src, index) => (
+                                {galleryImages.slice(0, 8).map((src, index) => (
                                     <motion.div
                                         key={index}
                                         variants={itemVariants}
-                                        className="relative aspect-square rounded-2xl overflow-hidden group border border-slate-800 cursor-pointer"
+                                        className={cn(
+                                            "relative rounded-xl overflow-hidden group cursor-pointer bg-slate-900 border border-slate-800",
+                                            index === 0 || index === 5 ? "col-span-2 row-span-2 aspect-square" : "col-span-1 aspect-square"
+                                        )}
                                     >
                                         <Image
                                             src={src}
                                             alt={`Galeri ${index + 1}`}
                                             fill
-                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                            sizes="(max-width: 768px) 50vw, 33vw"
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                            sizes="(max-width: 768px) 50vw, 25vw"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                        <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                            <span className="text-xs font-mono text-cyan-400 bg-cyan-950/30 px-2 py-1 rounded border border-cyan-500/30">
-                                                DOKUMENTASI
-                                            </span>
+                                        <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/60 transition-colors duration-300" />
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                                <Maximize2 className="w-5 h-5 text-white" />
+                                            </div>
                                         </div>
                                     </motion.div>
                                 ))}
                             </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                className="mt-8 text-center md:hidden"
+                            >
+                                <Link href="/gallery" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-800 text-white hover:bg-slate-700 transition-colors">
+                                    Lihat Semua Galeri
+                                    <ArrowRight className="w-4 h-4" />
+                                </Link>
+                            </motion.div>
                         </section>
                     </div>
 
-                    {/* Back to Home Button - Moved Before Footer */}
                     <div className="mt-16 mb-12">
                         <Link href="/#divisions" className="block p-4 rounded-xl bg-slate-800 text-center text-slate-300 hover:bg-slate-700 hover:text-white transition-colors">
                             <span className="flex items-center justify-center gap-2">

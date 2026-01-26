@@ -9,8 +9,8 @@ import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export default function Robosarema() {
-    const team = teams.find((t) => t.id === 'robosarema');
+export default function Botema() {
+    const team = teams.find((t) => t.id === 'botema');
 
     if (!team) {
         return <div>Team not found</div>;
@@ -18,25 +18,15 @@ export default function Robosarema() {
 
     const achievements = [
         { year: "2024", title: "Juara Harapan", level: "Regional 2" },
+        { year: "2023", title: "Quarter Finalist", level: "Nasional" },
     ];
 
     // Mock Data for Team Members
-    const teamMembers = [
-        { name: "Eric Agus Kurniawan Jauhari", role: "Ketua tim", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Faqih Rizaludin", role: "Divisi Elektrik", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Saidun Fiddaroini", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "M Faris Asroru Ghifary", role: "Manager", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Gaduh Prakoso", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Dwi Angga Pramana Achmaddillah", role: "Divisi Mekanik", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Dewi Chalissa Rania", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Hanik Kamila", role: "Manager", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Bisma Adhiaksa", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Ferdian Irawan Syahputra", role: "Divisi Elektrik", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Yoggy Pratama", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Nuzulmi Oktafianto R.", role: "Divisi Elektrik", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Muhammad Rafif Erdiansya", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Ilham Ramadhan", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Wilhelmus Zakharia Bimantara", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#", instagram: "#" } },
+    const teamMembers: { name: string; role: string; image: string; socials: { github?: string; linkedin?: string; instagram?: string } }[] = [
+        { name: "Nama Anggota 1", role: "Ketua Tim BOTEMA", image: "", socials: {} },
+        { name: "Nama Anggota 2", role: "Programmer AI", image: "", socials: {} },
+        { name: "Nama Anggota 3", role: "Mekanik Robot", image: "", socials: {} },
+        { name: "Nama Anggota 4", role: "Elektronika", image: "", socials: {} },
     ];
 
     const containerVariants = {
@@ -88,7 +78,7 @@ export default function Robosarema() {
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-5xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-6 font-mono tracking-tighter"
+                            className="text-5xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-orange-400 to-amber-600 mb-6 font-mono tracking-tighter"
                         >
                             {team.name}
                         </motion.h1>
@@ -201,7 +191,7 @@ export default function Robosarema() {
                                             <User className="w-10 h-10 text-cyan-200" />
                                         </div>
                                         <h3 className="text-xl font-bold text-white mb-1">{teamMembers[0].name}</h3>
-                                        <p className="text-cyan-400 font-mono text-sm uppercase tracking-wider">Ketua ROBOSAREMA</p>
+                                        <p className="text-cyan-400 font-mono text-sm uppercase tracking-wider">Ketua BOTEMA</p>
                                     </div>
                                     {/* Vertical connector line from leader */}
                                     <div className="absolute -bottom-8 left-1/2 w-0.5 h-8 bg-slate-600 -translate-x-1/2" />
@@ -257,7 +247,7 @@ export default function Robosarema() {
                             </motion.h2>
                             <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50">
                                 <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                                    Tim <strong>{team.name}</strong> ({team.category}) berfokus pada pengembangan robot otonom yang dirancang untuk misi penyelamatan di medan ekstrem. Kami mengintegrasikan sistem navigasi cerdas dan teknologi visi komputer untuk mendeteksi serta mengevakuasi korban secara cepat dan akurat.
+                                    Tim <strong>{team.name}</strong> ({team.category}) mengembangkan robot sepak bola beroda yang cepat dan lincah. Fokus utama kami adalah pada manuver omni-directional, kerja sama tim antar robot, dan kecerdasan buatan untuk strategi permainan.
                                 </p>
                                 <motion.ul
                                     variants={containerVariants}
@@ -266,13 +256,13 @@ export default function Robosarema() {
                                     viewport={{ once: true, margin: "-50px" }}
                                     className="grid grid-cols-1 md:grid-cols-2 gap-4"
                                 >
-                                    {['Navigasi Otonom & Pathfinding', 'Kinematika Robot Berkaki (Legged)', 'Computer Vision', 'Mikrokontroler STM32/ESP32'].map((item, i) => (
+                                    {['Navigasi Omni-directional', 'Multi-Agent System & AI Strategy', 'Ball Handling Mechanism', 'High Speed Path Planning'].map((item, i) => (
                                         <motion.li
                                             key={i}
                                             variants={itemVariants}
-                                            className="flex items-center gap-3 text-slate-400 p-3 rounded-xl bg-slate-950/50 border border-slate-900 hover:border-cyan-500/30 transition-colors group"
+                                            className="flex items-center gap-3 text-slate-400 p-3 rounded-xl bg-slate-950/50 border border-slate-900 hover:border-amber-500/30 transition-colors group"
                                         >
-                                            <div className="w-2 h-2 rounded-full bg-cyan-500 group-hover:shadow-[0_0_10px_rgba(6,182,212,0.8)] transition-shadow" />
+                                            <div className="w-2 h-2 rounded-full bg-amber-500 group-hover:shadow-[0_0_10px_rgba(245,158,11,0.8)] transition-shadow" />
                                             {item}
                                         </motion.li>
                                     ))}
