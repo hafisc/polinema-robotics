@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Gochi_Hand } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/layout/Preloader";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -36,9 +37,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${gochiHand.variable} scroll-smooth`}>
+        <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${gochiHand.variable}`}>
             <body className="font-sans bg-slate-950 antialiased" suppressHydrationWarning>
                 <Preloader />
+                <SmoothScroll />
                 {children}
             </body>
         </html>
