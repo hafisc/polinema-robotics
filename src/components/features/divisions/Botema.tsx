@@ -23,10 +23,22 @@ export default function Botema() {
 
     // Mock Data for Team Members
     const teamMembers: { name: string; role: string; image: string; socials: { github?: string; linkedin?: string; instagram?: string } }[] = [
-        { name: "Nama Anggota 1", role: "Ketua Tim BOTEMA", image: "", socials: {} },
-        { name: "Nama Anggota 2", role: "Programmer AI", image: "", socials: {} },
-        { name: "Nama Anggota 3", role: "Mekanik Robot", image: "", socials: {} },
-        { name: "Nama Anggota 4", role: "Elektronika", image: "", socials: {} },
+        { name: "Cahya Purna Yudha", role: "Ketua Tim BOTEMA", image: "", socials: {} },
+        { name: "Okta Karyamadhani Wibowo", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Tyo Septyan Eka Ramadhany", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Sulthon Uvan Maulana", role: "Divisi Software", image: "", socials: {} },
+        { name: "Narendra Ramadhana Dava Saputra", role: "Divisi Software", image: "", socials: {} },
+        { name: "Adinda Mirza Devani", role: "Divisi Software", image: "", socials: {} },
+        { name: "Moh. Suryo Lego A", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Ricke Dyah Marieta", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Azaria Khairunnisa Fawwaz", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Fitri Athaya Nur Azizah", role: "Divisi Manager", image: "", socials: {} },
+        { name: "Raya Bagas Wisesa", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Fata Haidar Aly", role: "Divisi Software", image: "", socials: {} },
+        { name: "Aditya Rizky Nurian", role: "Divisi Software", image: "", socials: {} },
+        { name: "Dhinda Kusherawati Ardianto", role: "Divisi Manager", image: "", socials: {} },
+        { name: "Muhammad Firdaus Alim", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Ferry Dicky Hermawan", role: "Divisi Elektrik", image: "", socials: {} },
     ];
 
     const containerVariants = {
@@ -247,7 +259,7 @@ export default function Botema() {
                             </motion.h2>
                             <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50">
                                 <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                                    Tim <strong>{team.name}</strong> ({team.category}) mengembangkan robot sepak bola beroda yang cepat dan lincah. Fokus utama kami adalah pada manuver omni-directional, kerja sama tim antar robot, dan kecerdasan buatan untuk strategi permainan.
+                                    Tim <strong>{team.name}</strong> ({team.category}) merupakan salah satu tim dari Polinema Robotics yang berfokus pada ajang Kontes Robot Tematik Indonesia (KRTMI). KRTMI mengambil tema perlombaan sesuai kebutuhan nasional dengan model permainan tradisional. Pada tahun 2024 KRTMI mengambil tema "Robot Pemilah sampah". Masing masing tim bermain menggunakan 2 robot yaitu robot pengumpan yang dapat digerakan secara manual dan robot pemilah yang bergerak secara otomatis, Permainan dilaksanakan antara dua tim yang menggerakkan robot pengumpan untuk mengangkat kotak sampah ke konveyor kemudian robot pemilah memilah sampah sesuai dengan jenisnya. Tema dari perlombaan KRTMI ini diharapkan menjadi wadah untuk mengembangkan dan menyampaikan ide-ide dalam memberikan kontribusi pada penerapan konsep Industri 4.0 melalui otomasi dan robotika. Tim <strong>{team.name}</strong> dibagi menjadi empat divisi yaitu:
                                 </p>
                                 <motion.ul
                                     variants={containerVariants}
@@ -256,7 +268,7 @@ export default function Botema() {
                                     viewport={{ once: true, margin: "-50px" }}
                                     className="grid grid-cols-1 md:grid-cols-2 gap-4"
                                 >
-                                    {['Navigasi Omni-directional', 'Multi-Agent System & AI Strategy', 'Ball Handling Mechanism', 'High Speed Path Planning'].map((item, i) => (
+                                    {['Divisi Mekanik', 'Divisi Software', 'Divisi Elektrik', 'Divisi Manager'].map((item, i) => (
                                         <motion.li
                                             key={i}
                                             variants={itemVariants}

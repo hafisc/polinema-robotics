@@ -23,10 +23,28 @@ export default function ArocPl() {
 
     // Mock Data for Team Members
     const teamMembers: { name: string; role: string; image: string; socials: { github?: string; linkedin?: string; instagram?: string } }[] = [
-        { name: "Nama Anggota 1", role: "Ketua Tim AROC-PL", image: "", socials: {} },
-        { name: "Nama Anggota 2", role: "Mekanik Humanoid", image: "", socials: {} },
-        { name: "Nama Anggota 3", role: "Programmer Vision", image: "", socials: {} },
-        { name: "Nama Anggota 4", role: "Elektronika", image: "", socials: {} },
+        { name: "Fasha Rafi Islamey", role: "Ketua Tim AROC-PL", image: "", socials: {} },
+        { name: "Adetin Dewi Cantika", role: "Divisi Manuevering", image: "", socials: {} },
+        { name: "Ahmad Habibullah", role: "Divisi Manuevering", image: "", socials: {} },
+        { name: "Alfarel Putra Ridho", role: "Divisi Manuevering", image: "", socials: {} },
+        { name: "Aprilio Firos  Nugroho", role: "Divisi Software (Image Processing)", image: "", socials: {} },
+        { name: "Bayu Kurniawan", role: "Divisi Manuevering", image: "", socials: {} },
+        { name: "Catherine Fitria Frederica", role: "Divisi Software (Image Processing)", image: "", socials: {} },
+        { name: "Egy Rahmad Setyawan", role: "Divisi Software (Communication)", image: "", socials: {} },
+        { name: "Fiqi Raihan Hubbi Masruri", role: "Divisi Software (Communication)", image: "", socials: {} },
+        { name: "Gabriel Batavia Xaverius", role: "Divisi Software (Image Processing)", image: "", socials: {} },
+        { name: "Gavra Ahmad Zidan ", role: "Divisi Manuevering", image: "", socials: {} },
+        { name: "Hannunah Qiblatin", role: "Divisi Manager", image: "", socials: {} },
+        { name: "M. Riyan Hidayat", role: "Divisi Manuevering", image: "", socials: {} },
+        { name: "Moch. Bahrudin Yusuf", role: "Divisi Software (Communication)", image: "", socials: {} },
+        { name: "Mohammad Rizal Al Akbar ", role: "Divisi Manuevering", image: "", socials: {} },
+        { name: "Muh. Fatih Assayuti", role: "Divisi Software (Image Processing)", image: "", socials: {} },
+        { name: "Muhammad Afifi", role: "Divisi Software (Communication)", image: "", socials: {} },
+        { name: "Muhmmad Lufyn Aulia Rahman", role: "Divisi Manuevering", image: "", socials: {} },
+        { name: "Naomi Phoan Alodia Edgina", role: "Divisi Manager", image: "", socials: {} },
+        { name: "Noor Ishmata Choirun Eilmi", role: "Divisi Software (Image Processing)", image: "", socials: {} },
+        { name: "Rendy Eko Prastyo", role: "Divisi Manuevering", image: "", socials: {} },
+        { name: "Rio Zeva Artasena", role: "Divisi Software (Communication)", image: "", socials: {} },
 
     ];
 
@@ -253,7 +271,7 @@ export default function ArocPl() {
                             </motion.h2>
                             <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50">
                                 <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                                    Tim <strong>{team.name}</strong> ({team.category}) berfokus pada pengembangan robot humanoid yang mampu meniru gerakan manusia, menjaga keseimbangan dinamis, dan berinteraksi dengan lingkungan secara otonom.
+                                    Tim <strong>{team.name}</strong> ({team.category}) merupakan salah satu tim robot Politeknik Negeri Malang yang fokus pada KRI (Kontes Robot Indonesia) untuk divisi Humanoid Soccer Robot. Tim AROC_PL berdiri mulai tahun 2019 dengan fokus utama yaitu robot humanoid yang dapat bermain sepak bola. Dalam membangun sistem robotika agar mampu bermain sepak bola, tim AROC_PL dibagi menjadi 3 divisi, yaitu :
                                 </p>
                                 <motion.ul
                                     variants={containerVariants}
@@ -262,7 +280,7 @@ export default function ArocPl() {
                                     viewport={{ once: true, margin: "-50px" }}
                                     className="grid grid-cols-1 md:grid-cols-2 gap-4"
                                 >
-                                    {['Kinematika & Dinamika Gerak', 'Computer Vision & Object Tracking', 'Sistem Keseimbangan (IMU/Gyro)', 'Kecerdasan Buatan (AI)'].map((item, i) => (
+                                    {['Divisi Image Processing', 'Divisi Communication', 'Divisi Manuevering'].map((item, i) => (
                                         <motion.li
                                             key={i}
                                             variants={itemVariants}

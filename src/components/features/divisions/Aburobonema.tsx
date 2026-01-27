@@ -27,31 +27,30 @@ export default function Aburobonema() {
         { year: "2020", title: "Juara Harapan", level: "Nasional" },
     ];
 
-    // Mock Data for Team Members
     const teamMembers = [
-        { name: "Mochamad Widdad El Aufany", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Moh. Rif'at Nur Fahri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Muhammad Alif Nugroho", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Muhammad Orri' Syahputra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Zahrina Rana Nadhila", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Putri Wahyu Ilahi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Syahrul Fauzi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Husnil Al Fajri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Nizam Agatha Lukito Putra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Bintang Yoga Samiaji", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Tjipto Aria Bima", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Ananda Vito Nur Islam", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Handi Riswanto", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Siti Nikmatus Sholihah", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Reny Ambarwati", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Mohammad Al Hafis Hidayatulloh", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Naufal Faqih Ramadhan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Muhammad Fitroh Amin", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "M Ergiansyah S", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "M. Baharudin Fajar Ramadan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Faqih Azhar Fathurrochman", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Moh. Nafis Ali Fahri", role: "Anggota ABUROBONEMA", image: "", socials: { linkedin: "#" } },
-        { name: "Imam Mustaqim", role: "Anggota ABUROBONEMA", image: "", socials: { github: "#", instagram: "#" } },
+        { name: "Mochamad Widdad El Aufany", role: "Ketua ABUROBONEMA", image: "", socials: {} },
+        { name: "Moh. Rif'at Nur Fahri", role: "Divisi Software", image: "", socials: {} },
+        { name: "Muhammad Alif Nugroho", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Muhammad Orri' Syahputra", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Zahrina Rana Nadhila", role: "Divisi Project Manager", image: "", socials: {} },
+        { name: "Putri Wahyu Ilahi", role: "Divisi Project Manager", image: "", socials: {} },
+        { name: "Syahrul Fauzi", role: "Divisi Software", image: "", socials: {} },
+        { name: "Husnil Al Fajri", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Nizam Agatha Lukito Putra", role: "Divisi Project Manager", image: "", socials: {} },
+        { name: "Bintang Yoga Samiaji", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Tjipto Aria Bima", role: "Divisi Software", image: "", socials: {} },
+        { name: "Ananda Vito Nur Islam", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Handi Riswanto", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Siti Nikmatus Sholihah", role: "Divisi Project Manager", image: "", socials: {} },
+        { name: "Reny Ambarwati", role: "Divisi Software", image: "", socials: {} },
+        { name: "Mohammad Al Hafis Hidayatulloh", role: "Divisi Software", image: "", socials: {} },
+        { name: "Naufal Faqih Ramadhan", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Muhammad Fitroh Amin", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "M Ergiansyah S", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "M. Baharudin Fajar Ramadan", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Faqih Azhar Fathurrochman", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Moh. Nafis Ali Fahri", role: "Divisi Software", image: "", socials: { linkedin: "#" } },
+        { name: "Imam Mustaqim", role: "Divisi Elektrik", image: "", socials: { github: "#", instagram: "#" } },
     ];
 
     const containerVariants = {
@@ -83,9 +82,7 @@ export default function Aburobonema() {
             <Navbar />
 
             <div className="flex-grow">
-                {/* Hero Section Immersive */}
                 <div className="relative min-h-[60vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
-                    {/* Background Image with Overlay */}
                     <div className="absolute inset-0 z-0">
                         <Image
                             src={team.image}
@@ -99,8 +96,6 @@ export default function Aburobonema() {
                     </div>
 
                     <div className="container mx-auto px-4 relative z-10 pt-20 text-center">
-
-
                         <motion.h1
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -122,11 +117,8 @@ export default function Aburobonema() {
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10 -mt-20 pb-24">
-
-
-
                     <div className="space-y-12">
-                        {/* Section: Hall of Fame (Prestasi) */}
+                        {/* Section: Prestasi Tim */}
                         <section>
                             <motion.h2
                                 initial={{ opacity: 0, x: -20 }}
@@ -195,7 +187,7 @@ export default function Aburobonema() {
                             </motion.div>
                         </section>
 
-                        {/* Section: Anggota Tim (Struktur Organisasi) */}
+                        {/* Section: Struktur Tim */}
                         <section className="py-8">
                             <motion.h2
                                 initial={{ opacity: 0, x: -20 }}
@@ -208,7 +200,6 @@ export default function Aburobonema() {
                             </motion.h2>
 
                             <div className="relative flex flex-col items-center">
-                                {/* Leader Node */}
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -223,19 +214,12 @@ export default function Aburobonema() {
                                         <h3 className="text-xl font-bold text-white mb-1">{teamMembers[0].name}</h3>
                                         <p className="text-cyan-400 font-mono text-sm uppercase tracking-wider">Ketua ABUROBONEMA</p>
                                     </div>
-                                    {/* Vertical connector line from leader */}
                                     <div className="absolute -bottom-8 left-1/2 w-0.5 h-8 bg-slate-600 -translate-x-1/2" />
                                 </motion.div>
 
-                                {/* Connection Node Point */}
                                 <div className="w-4 h-4 rounded-full bg-slate-600 border-2 border-slate-900 absolute top-[13.5rem] z-20" />
+                                <div className="w-[85%] h-0.5 bg-slate-600 mb-8 relative"></div>
 
-                                {/* Horizontal Divider for Tree */}
-                                <div className="w-[85%] h-0.5 bg-slate-600 mb-8 relative">
-                                    {/* Vertical lines dropping to grid */}
-                                </div>
-
-                                {/* Members Grid */}
                                 <motion.div
                                     variants={containerVariants}
                                     initial="hidden"
@@ -264,7 +248,7 @@ export default function Aburobonema() {
                             </div>
                         </section>
 
-                        {/* Section: Fokus Pengembangan (Focus) */}
+                        {/* Section: Fokus Pengembangan */}
                         <section>
                             <motion.h2
                                 initial={{ opacity: 0, x: -20 }}
@@ -277,7 +261,7 @@ export default function Aburobonema() {
                             </motion.h2>
                             <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50">
                                 <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                                    Tim <strong>{team.name}</strong> mendedikasikan diri untuk mendorong batas kemampuan robotika. Kami menggabungkan <em>engineering</em> presisi dengan algoritma cerdas untuk menciptakan robot yang adaptif dan tangguh.
+                                    Tim <strong>{team.name}</strong> salah satu tim robotik Politeknik Negeri Malang yang fokus pada ajang KRI (Kontes Robot Indonesia) untuk divisi KRAI (Kontes Robot ABU Indonesia). Tema perlombaan KRAI setiap tahunnya berbeda, mengacu pada ABU Robocon (Asia-Pacific Broadcasting Union Robot Contest) yang mana pada tahun ini memiliki tema "Robot Kungfu". Tim Aburobonema telah meraih 8 juara selama 5 tahun berturut-urut. Aburobonema memiliki tiga divisi yaitu: 
                                 </p>
                                 <motion.ul
                                     variants={containerVariants}
@@ -286,7 +270,7 @@ export default function Aburobonema() {
                                     viewport={{ once: true, margin: "-50px" }}
                                     className="grid grid-cols-1 md:grid-cols-2 gap-4"
                                 >
-                                    {['Mekanik Presisi CAD/CAM', 'Sistem Kontrol PID & Fuzzy', 'Computer Vision AI', 'Mikrokontroler STM32/ESP32'].map((item, i) => (
+                                    {['Divisi Mekanik', 'Divisi Elektrik', 'Divisi Software', 'Divisi Project Manager'].map((item, i) => (
                                         <motion.li
                                             key={i}
                                             variants={itemVariants}
@@ -353,9 +337,7 @@ export default function Aburobonema() {
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"
                                             sizes="(max-width: 768px) 50vw, 25vw"
                                         />
-
                                         <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/60 transition-colors duration-300" />
-
                                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                             <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                                                 <Maximize2 className="w-5 h-5 text-white" />
@@ -378,7 +360,6 @@ export default function Aburobonema() {
                         </section>
                     </div>
 
-                    {/* Back to Home Button - Moved Before Footer */}
                     <div className="mt-16 mb-12">
                         <Link href="/#divisions" className="block p-4 rounded-xl bg-slate-800 text-center text-slate-300 hover:bg-slate-700 hover:text-white transition-colors">
                             <span className="flex items-center justify-center gap-2">
