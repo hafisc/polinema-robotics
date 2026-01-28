@@ -15,13 +15,25 @@ import 'swiper/css/effect-coverflow';
 export default function Gallery() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeFilter, setActiveFilter] = useState("Semua");
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
+    // Extract unique categories from data
+    const categories = Array.from(new Set(galleryImages.map(img => img.category))).filter(Boolean) as string[];
+    
     // Extract unique years from data, sort descending
     const years = ["Semua", ...Array.from(new Set(galleryImages.map(img => img.year))).sort().reverse()];
 
     const filteredImages = activeFilter === "Semua"
         ? galleryImages
         : galleryImages.filter(img => img.year === activeFilter);
+    
+    // Get images for selected category with year filter
+    const categoryImages = selectedCategory 
+        ? filteredImages.filter(img => img.category === selectedCategory)
+        : [];
+    
+    // Get categories with year filter
+    const categoriesInYear = Array.from(new Set(filteredImages.map(img => img.category))).filter(Boolean) as string[];
 
     return (
         <section className="py-24 bg-slate-950 relative overflow-hidden" id="gallery">
@@ -212,7 +224,10 @@ export default function Gallery() {
 
                                 {/* Close Button */}
                                 <button
-                                    onClick={() => setIsModalOpen(false)}
+                                    onClick={() => {
+                                        setIsModalOpen(false);
+                                        setSelectedCategory(null);
+                                    }}
                                     className="group flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:bg-red-500/10 hover:text-red-500 hover:border-red-500/50 transition-all font-mono text-sm"
                                 >
                                     <span>TUTUP</span>
@@ -220,42 +235,124 @@ export default function Gallery() {
                                 </button>
                             </div>
 
-                            {/* Grid Layout */}
-                            <motion.div
-                                layout
-                                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-20"
-                            >
-                                <AnimatePresence mode="popLayout">
-                                    {filteredImages.map((item, idx) => (
-                                        <motion.div
-                                            key={`${item.src}-${idx}`}
-                                            layout
-                                            initial={{ opacity: 0, scale: 0.8 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            exit={{ opacity: 0, scale: 0.8 }}
-                                            transition={{ duration: 0.3 }}
-                                            className="relative group aspect-square rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 break-inside-avoid"
+                            {/* Grid Layout - Show Categories or Photos */}
+                            {selectedCategory === null ? (
+                                // Show Category Cards
+                                <motion.div
+                                    layout
+                                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pb-20"
+                                >
+                                    <AnimatePresence mode="popLayout">
+                                        {categoriesInYear.map((category) => {
+                                            const categoryCount = filteredImages.filter(img => img.category === category).length;
+                                            const categoryThumbnail = filteredImages.find(img => img.category === category)?.src;
+                                            return (
+                                                <motion.button
+                                                    key={category}
+                                                    onClick={() => setSelectedCategory(category)}
+                                                    whileHover={{ scale: 1.05 }}
+                                                    whileTap={{ scale: 0.95 }}
+                                                    layout
+                                                    initial={{ opacity: 0, scale: 0.8 }}
+                                                    animate={{ opacity: 1, scale: 1 }}
+                                                    exit={{ opacity: 0, scale: 0.8 }}
+                                                    transition={{ duration: 0.3 }}
+                                                    className="relative group h-64 rounded-3xl overflow-hidden bg-slate-900 border-2 border-slate-700 hover:border-cyan-500 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(34,211,238,0.3)]"
+                                                >
+                                                    {/* Background Image */}
+                                                    {categoryThumbnail && (
+                                                        <Image
+                                                            src={categoryThumbnail}
+                                                            alt={category}
+                                                            fill
+                                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                                                        />
+                                                    )}
+                                                    
+                                                    {/* Dark Overlay */}
+                                                    <div className="absolute inset-0 bg-slate-950/70 group-hover:bg-slate-950/60 transition-all duration-300" />
+                                                    
+                                                    {/* Gradient overlay */}
+                                                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-transparent to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                                    
+                                                    {/* Content */}
+                                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+                                                        <h3 className="text-2xl md:text-3xl font-bold text-white poppins mb-2 group-hover:text-cyan-300 transition-colors duration-300 drop-shadow-lg">
+                                                            {category}
+                                                        </h3>
+                                                        <p className="text-slate-300 text-sm font-mono mb-4 drop-shadow-md">
+                                                            {categoryCount} {categoryCount === 1 ? 'foto' : 'foto'}
+                                                        </p>
+                                                        <div className="flex items-center gap-2 text-cyan-400 font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                            LIHAT
+                                                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                                        </div>
+                                                    </div>
+                                                </motion.button>
+                                            );
+                                        })}
+                                    </AnimatePresence>
+                                </motion.div>
+                            ) : (
+                                // Show Photos in Category Box
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="pb-20"
+                                >
+                                    {/* Category Header */}
+                                    <div className="mb-8 flex items-center justify-between">
+                                        <h3 className="text-3xl font-bold text-white poppins">
+                                            {selectedCategory}
+                                        </h3>
+                                        <button
+                                            onClick={() => setSelectedCategory(null)}
+                                            className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:bg-slate-700 hover:text-white transition-all font-mono text-sm"
                                         >
-                                            <Image
-                                                src={item.src}
-                                                alt={`Gallery ${idx}`}
-                                                fill
-                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                            />
-                                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
-                                                <span className="text-cyan-400 font-bold text-lg mb-1">{item.year}</span>
-                                                <span className="text-slate-300 text-sm">{item.category}</span>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </AnimatePresence>
-                            </motion.div>
+                                            <span>KEMBALI</span>
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
+                                        </button>
+                                    </div>
 
-                            {filteredImages.length === 0 && (
-                                <div className="text-center py-20 text-slate-500 font-mono">
-                                    Tidak ada foto di tahun ini.
-                                </div>
+                                    {/* Photos Grid */}
+                                    <motion.div
+                                        layout
+                                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+                                    >
+                                        <AnimatePresence mode="popLayout">
+                                            {categoryImages.map((item, idx) => (
+                                                <motion.div
+                                                    key={`${item.src}-${idx}`}
+                                                    layout
+                                                    initial={{ opacity: 0, scale: 0.8 }}
+                                                    animate={{ opacity: 1, scale: 1 }}
+                                                    exit={{ opacity: 0, scale: 0.8 }}
+                                                    transition={{ duration: 0.3 }}
+                                                    className="relative group aspect-square rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 break-inside-avoid"
+                                                >
+                                                    <Image
+                                                        src={item.src}
+                                                        alt={`Gallery ${idx}`}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+                                                        <span className="text-cyan-400 font-bold text-lg mb-1">{item.year}</span>
+                                                        <span className="text-slate-300 text-sm">{item.category}</span>
+                                                    </div>
+                                                </motion.div>
+                                            ))}
+                                        </AnimatePresence>
+                                    </motion.div>
+
+                                    {categoryImages.length === 0 && (
+                                        <div className="text-center py-20 text-slate-500 font-mono">
+                                            Tidak ada foto di kategori ini.
+                                        </div>
+                                    )}
+                                </motion.div>
                             )}
                         </div>
                     </motion.div>
