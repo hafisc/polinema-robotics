@@ -133,12 +133,12 @@ export interface GalleryItem {
 }
 
 export const galleryImages: GalleryItem[] = [
-    { src: "/images/gallery/1.JPG", year: "2024", category: "KRAI" },
-    { src: "/images/gallery/2.JPG", year: "2024", category: "KRSBI" },
-    { src: "/images/gallery/3.JPG", year: "2023", category: "KRSRI" },
-    { src: "/images/gallery/aroc.jpg", year: "2024", category: "Humanoid" },
-    { src: "/images/gallery/aroc1.jpg", year: "2023", category: "Humanoid" },
-    { src: "/images/gallery/UMS_3556.jpg", year: "2022", category: "KRAI" },
-    { src: "/images/gallery/WEB_6506.JPG", year: "2022", category: "KRSBI" },
-    { src: "/images/gallery/UMS14038.JPG", year: "2023", category: "General" },
+    { src: "/images/gallery/1.JPG", year: "2024", category: "KRI 2024" },
+    { src: "/images/gallery/2.JPG", year: "2024", category: "KRI 2024" },
+    { src: "/images/gallery/3.JPG", year: "2024", category: "KRI 2024" },
+    { src: "/images/gallery/aroc.jpg", year: "2024", category: "KRI 2024" },
+    { src: "/images/gallery/aroc1.jpg", year: "2024", category: "KRI 2024" },
+    { src: "/images/gallery/UMS_3556.jpg", year: "2024", category: "KRI 2024" },
+    { src: "/images/gallery/WEB_6506.JPG", year: "2024", category: "KRI 2024" },
+    { src: "/images/gallery/UMS14038.JPG", year: "2024", category: "KRI 2024" },
 ];
